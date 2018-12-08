@@ -8,7 +8,7 @@
       <div class="ui form"
             ng-class="{'loading': loading}">
 
-        <div class="divided title">Basic Information</div>
+        <div class="divided title">Get to know you!</div>
 
         <fieldset ng-disabled="regIsClosed">
 
@@ -46,15 +46,17 @@
         </div>
 
         <div class="field">
-          <label>Graduation Year</label>
+          <label>Year</label>
           <select
             name="year"
             ng-model="user.profile.graduationYear">
-            <option value="">Graduation Year</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
+            <option value="High School">High School</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+            <option value="5th Year">5th Year (and up)</option>
+            <option value="Graduate Student">Graduate Student</option>
           </select>
         </div>
 
@@ -66,9 +68,32 @@
             <option value="">Gender</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
-            <option value="O">Other</option>
+            <option value="O">Non-Binary</option>
             <option value="N">I prefer not to answer.</option>
           </select>
+        </div>
+
+        <div class="field">
+          <label>Ethnicity</label>
+          <select
+            name="gender"
+            ng-model="user.profile.Ethnicity">
+            <option value="A">American Indian or Alaska Native</option>
+            <option value="B">Asian</option>
+            <option value="C">Black or African American</option>
+            <option value="D">Hispanic or Latino</option>
+            <option value="E">Native Hawaiian or Pacific Islander</option>
+            <option value="F">White</option>
+            <option value="G">Two or more races</option>
+            <option value="H">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>I would describe myself as a...</label>
+          <input type="text"
+                 placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
+                 ng-model="user.profile.description">
         </div>
 
         <div class="field">

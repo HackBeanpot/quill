@@ -1,7 +1,6 @@
 @import "branding";
 @import "custom";
-// Import Nunito
-@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
 $font-body: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
 $font-header: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
 
@@ -62,7 +61,7 @@ body {
 
 body {
   margin: 0;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 300;
 
   > .container {

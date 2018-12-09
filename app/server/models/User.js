@@ -25,10 +25,10 @@ var profile = {
     max: 150,
   },
 
-  graduationYear: {
+  year: {
     type: String,
     enum: {
-      values: '2016 2017 2018 2019'.split(' '),
+      values: 'H 1 2 3 4 5 G'.split(' '),
     }
   },
 
@@ -44,6 +44,12 @@ var profile = {
     max: 1500
   },
 
+  activities: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
   // Optional info for demographics
   gender: {
     type: String,
@@ -52,6 +58,24 @@ var profile = {
     }
   },
 
+  ethnicity: {
+    type: String,
+    enum : {
+      values: 'A B C D E F G H'.split(' ')
+    }
+  },
+
+  major: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
+
+  minor: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
 };
 
 // Only after confirmed

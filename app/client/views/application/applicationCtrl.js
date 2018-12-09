@@ -164,4 +164,5 @@ angular.module('reg')
           swal("Uh oh!", "Please Fill The Required Fields", "error");
         }
       };
+      
     }]);

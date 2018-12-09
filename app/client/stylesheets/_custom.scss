@@ -13,3 +13,12 @@ $hbp-green: #70e0a3;
 $primary: $hbp-navy;
 $secondary: $hbp-navy;
 $tertiary: $hbp-red;
+
+// Overrides for Semantic UI
+
+.ui.purple.button {
+  background-color: $hbp-purple;
+}
+.ui.pink.button {
+  background-color: $hbp-green;
+}

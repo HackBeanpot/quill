@@ -22,3 +22,7 @@ $tertiary: $hbp-red;
 .ui.pink.button {
   background-color: $hbp-green;
 }
+
+.title {
+  text-transform: capitalize !important;
+}

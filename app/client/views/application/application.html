@@ -1,263 +1,360 @@
 <div id="application" class="page">
-  <div class="divided title">
-    Application
-  </div>
+  <div class="divided title">Application</div>
 
   <div class="ui stackable page grid">
     <div class="column">
-      <div class="ui form"
-            ng-class="{'loading': loading}">
-
+      <div class="ui form" ng-class="{'loading': loading}">
         <div class="divided title">Get to know you!</div>
 
         <fieldset ng-disabled="regIsClosed">
-
-        <div class="field">
-          <label> Email </label>
-          <input type="email"
-                 name="email"
-                 disabled="disabled"
-                 ng-model="user.email">
-        </div>
-
-        <div class="field">
-          <label> Full Name </label>
-          <input type="text"
-                 name="name"
-                 placeholder="Name"
-                 ng-model="user.profile.name">
-        </div>
-
-        <div class="field" ng-show="autoFilledSchool">
-          <label> School </label>
-          <input class="ui input"
-                 disabled="disabled"
-                 ng-show="autoFilledSchool"
-                 ng-model="user.profile.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> School </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
-            </div>
-            <div class="results"></div>
+          <div class="field">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              disabled="disabled"
+              ng-model="user.email"
+            />
           </div>
-        </div>
 
-        <div class="field">
-          <label>Year</label>
-          <select
-            name="year"
-            ng-model="user.profile.year">
-            <option value="H">High School</option>
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
-            <option value="5">5th Year (and up)</option>
-            <option value="G">Graduate Student</option>
-          </select>
-        </div>
+          <div class="field">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              ng-model="user.profile.name"
+            />
+          </div>
 
-        <div class="field">
-          <label>Gender</label>
-          <select
-            name="gender"
-            ng-model="user.profile.gender">
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="O">Non-Binary</option>
-            <option value="N">I prefer not to answer.</option>
-          </select>
-        </div>
+          <div class="field" ng-show="autoFilledSchool">
+            <label>School</label>
+            <input
+              class="ui input"
+              disabled="disabled"
+              ng-show="autoFilledSchool"
+              ng-model="user.profile.school"
+            />
+          </div>
 
-        <div class="field">
-          <label>Ethnicity</label>
-          <select
-            name="ethnicity"
-            ng-model="user.profile.ethnicity">
-            <option value="A">American Indian or Alaska Native</option>
-            <option value="B">Asian</option>
-            <option value="C">Black or African American</option>
-            <option value="D">Hispanic or Latino</option>
-            <option value="E">Native Hawaiian or Pacific Islander</option>
-            <option value="F">White</option>
-            <option value="G">Two or more races</option>
-            <option value="H">Other</option>
-          </select>
-        </div>
+          <div class="field" ng-show="!autoFilledSchool">
+            <label>School</label>
+            <div id="school" class="ui search">
+              <div class="ui input">
+                <input
+                  class="prompt"
+                  type="text"
+                  placeholder="School"
+                  name="school"
+                  ng-model="user.profile.school"
+                />
+              </div>
+              <div class="results"></div>
+            </div>
+          </div>
 
-        <div class="field">
-          <label>Major</label>
-          <input type="text"
-                 placeholder="Major"
-                 ng-model="user.profile.major">
-        </div>
-        
-        <div class="field">
-          <label>Minor</label>
-          <input type="text"
-                 placeholder="Minor"
-                 ng-model="user.profile.minor">
-        </div>
+          <div class="field">
+            <label>Year</label>
+            <select name="year" ng-model="user.profile.year">
+              <option value="H">High School</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+              <option value="5">5th Year (and up)</option>
+              <option value="G">Graduate Student</option>
+            </select>
+          </div>
 
-        <br>
+          <div class="field">
+            <label>Gender</label>
+            <select name="gender" ng-model="user.profile.gender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Non-Binary</option>
+              <option value="N">I prefer not to answer.</option>
+            </select>
+          </div>
 
-        <div class="divided title">Interests and Experience</div>
+          <div class="field">
+            <label>Ethnicity</label>
+            <select name="ethnicity" ng-model="user.profile.ethnicity">
+              <option value="A">American Indian or Alaska Native</option>
+              <option value="B">Asian</option>
+              <option value="C">Black or African American</option>
+              <option value="D">Hispanic or Latino</option>
+              <option value="E">Native Hawaiian or Pacific Islander</option>
+              <option value="F">White</option>
+              <option value="G">Two or more races</option>
+              <option value="H">Other</option>
+            </select>
+          </div>
 
-        <div class="section description">
-          <p>
-              Let us know what you’re interested in! Don’t be shy. If you’ve been looking for the opportunity to gain some experience, HackBeanpot is the perfect place to explore and learn something new!
-          </p>
-        </div>
-        
-        <br>
-        
-        <div class="field">
+          <div class="field">
+            <label>Major</label>
+            <input
+              type="text"
+              placeholder="Major"
+              ng-model="user.profile.major"
+            />
+          </div>
+
+          <div class="field">
+            <label>Minor</label>
+            <input
+              type="text"
+              placeholder="Minor"
+              ng-model="user.profile.minor"
+            />
+          </div>
+
+          <br />
+
+          <div class="divided title">Interests and Experience</div>
+
+          <div class="section description">
+            <p>
+              Let us know what you’re interested in! Don’t be shy. If you’ve
+              been looking for the opportunity to gain some experience,
+              HackBeanpot is the perfect place to explore and learn something
+              new!
+            </p>
+          </div>
+
+          <br />
+
+          <div class="field">
             <label>Tech Interests</label>
-            <input type="checkbox" name="interest" value="Hardware">  Hardware<br>
-            <input type="checkbox" name="interest" value="Web Development">  Web Development<br>
-            <input type="checkbox" name="interest" value="Mobile App Development">  Mobile App Development<br>
-            <input type="checkbox" name="interest" value="AI/Machine Learning">  AI/Machine Learning<br>
-            <input type="checkbox" name="interest" value="Data Analytics">  Data Analytics<br>
-            <input type="checkbox" name="interest" value="AR/VR">  AR/VR<br>
-            <input type="checkbox" name="interest" value="Natural Language Processing">  Natural Language Processing<br>
-            <input type="checkbox" name="interest" value="UI/UX Design">  UI/UX Design<br>
-            <input type="checkbox" name="interest" value="Project Management">  Project Management<br>            
-        </div>
-        
-        <br>
+            <input type="checkbox" name="interest" value="Hardware" />
+            Hardware<br />
+            <input type="checkbox" name="interest" value="Web Development" />
+            Web Development<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="Mobile App Development"
+            />
+            Mobile App Development<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="AI/Machine Learning"
+            />
+            AI/Machine Learning<br />
+            <input type="checkbox" name="interest" value="Data Analytics" />
+            Data Analytics<br />
+            <input type="checkbox" name="interest" value="AR/VR" /> AR/VR<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="Natural Language Processing"
+            />
+            Natural Language Processing<br />
+            <input type="checkbox" name="interest" value="UI/UX Design" /> UI/UX
+            Design<br />
+            <input type="checkbox" name="interest" value="Project Management" />
+            Project Management<br />
+          </div>
 
-        <div class="field">
-          <label>What’s your background? Are you a chemical engineer? A web developer? An entrepreneur? A marketing specialist? An artist? A biologist? Or just a curious mind?</label>
-          <input type="text"
-                 placeholder="Give us a snapshot of your skillset!"
-                 ng-model="user.profile.description">
-        </div>
+          <br />
 
-        <br>
+          <div class="field">
+            <label
+              >What’s your background? Are you a chemical engineer? A web
+              developer? An entrepreneur? A marketing specialist? An artist? A
+              biologist? Or just a curious mind?</label
+            >
+            <input
+              type="text"
+              placeholder="Give us a snapshot of your skillset!"
+              ng-model="user.profile.description"
+            />
+          </div>
 
-        <div class="field">
+          <br />
+
+          <div class="field">
             <label>Hacking Experience</label>
-            <input type="checkbox" name="interest" value="This will be my first time at a hackathon">  This will be my first time at a hackathon<br>
-            <input type="checkbox" name="interest" value="I have been to one or more hackathons before">  I have been to one or more hackathons before<br>
-            <input type="checkbox" name="interest" value="I have been to HackBeanpot before">  I have been to HackBeanpot before<br>
-            <input type="checkbox" name="interest" value="I would be interested in a first time hacker orientation">  I would be interested in a first time hacker orientation<br>         
-        </div>
-        
-        <br>
+            <input
+              type="checkbox"
+              name="interest"
+              value="This will be my first time at a hackathon"
+            />
+            This will be my first time at a hackathon<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="I have been to one or more hackathons before"
+            />
+            I have been to one or more hackathons before<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="I have been to HackBeanpot before"
+            />
+            I have been to HackBeanpot before<br />
+            <input
+              type="checkbox"
+              name="interest"
+              value="I would be interested in a first time hacker orientation"
+            />
+            I would be interested in a first time hacker orientation<br />
+          </div>
 
-        <div class="field">
+          <br />
+
+          <div class="field">
             <label>Resume Upload (optional)</label>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-              Get. dat. internship. This is not for us to look at! We will simply pass your resume on to our sponsors.
-              <input type="file" name="fileToUpload" id="fileToUpload">
-            </form>     
-        </div>
-  
-        <br>
+            <form
+              action="upload.php"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              Get. dat. internship. This is not for us to look at! We will
+              simply pass your resume on to our sponsors.
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+            </form>
+          </div>
 
-        <div class="divided title">Some Final Questions</div>
+          <br />
 
-        <div class="field">
+          <div class="divided title">Some Final Questions</div>
+
+          <div class="field">
             <label>How did you find us?</label>
-            <input type="checkbox" name="interest" value="Friends">  Friends<br>
-            <input type="checkbox" name="interest" value="Facebook">  Facebook<br>
-            <input type="checkbox" name="interest" value="Twitter">  Twitter<br>
-            <input type="checkbox" name="interest" value="Instagram">  Instagram<br>
-            <input type="checkbox" name="interest" value="Outreach Event">  Outreach Event<br>
-            <input type="checkbox" name="interest" value="Our Website">  Our Website<br>
-            <input type="checkbox" name="interest" value="Blog Post">  Blog Post<br>
-        </div>
+            <input type="checkbox" name="interest" value="Friends" />
+            Friends<br />
+            <input type="checkbox" name="interest" value="Facebook" />
+            Facebook<br />
+            <input type="checkbox" name="interest" value="Twitter" />
+            Twitter<br />
+            <input type="checkbox" name="interest" value="Instagram" />
+            Instagram<br />
+            <input type="checkbox" name="interest" value="Outreach Event" />
+            Outreach Event<br />
+            <input type="checkbox" name="interest" value="Our Website" /> Our
+            Website<br />
+            <input type="checkbox" name="interest" value="Blog Post" /> Blog
+            Post<br />
+          </div>
 
-        <br>
+          <br />
 
-        <div class="field">
-            <label>What’s a hackathon without doing random things at random times? List some activities you would like to participate in: (i.e. yoga, coding challenges,  minute to win it games)</label>
-            <input type="text"
-                   placeholder="Activities"
-                   ng-model="user.profile.description">
-        </div>
-  
-        <br>
+          <div class="field">
+            <label
+              >What’s a hackathon without doing random things at random times?
+              List some activities you would like to participate in: (i.e. yoga,
+              coding challenges, minute to win it games)</label
+            >
+            <input
+              type="text"
+              placeholder="Activities"
+              ng-model="user.profile.activities"
+            />
+          </div>
 
-        <div class="field">
+          <br />
+
+          <div class="field">
             <label>
-                Are there any specific topics/technologies you'd be interested in attending a talk or workshop about? (i.e. React, team-building, UI/UX, career development)
+              Are there any specific topics/technologies you'd be interested in
+              attending a talk or workshop about? (i.e. React, team-building,
+              UI/UX, career development)
             </label>
-            <textarea ng-model="user.profile.essay">
-            </textarea>
-        </div>
+            <textarea ng-model="user.profile.interests"> </textarea>
+          </div>
 
-        <br>
+          <br />
 
-        <div class="field">
-            <label>Any food restrictions or allergies?</label>
-            <input type="text"
-                   placeholder="Dietary Restrictions"
-                   ng-model="user.profile.description">
-        </div>
-  
-        <br>
+          <div class="field">
+            <label
+              >Forming your winning team - Please select the option most
+              relevant to you</label
+            >
+            <input
+              type="radio"
+              name="interest"
+              value="I have a team that I plan to come and work with"
+            />
+            I have a team that I plan to come and work with<br />
+            <input
+              type="radio"
+              name="interest"
+              value="I have a team in mind but would be open to finding a new team at the event"
+            />
+            I have a team in mind but would be open to finding a new team at the
+            event<br />
+            <input
+              type="radio"
+              name="interest"
+              value="I want to join a new team at the event"
+            />
+            I want to join a new team at the event<br />
+            <input type="radio" name="interest" value="I want to work solo" /> I
+            want to work solo<br />
+            <label
+              >If you have a team in mind please fill out the team information
+              on your dashboard</label
+            >
+          </div>
 
-        <div class="field">
-            <label>Forming your winning team - Please select the option most relevant to you</label>
-            <input type="radio" name="interest" value="I have a team that I plan to come and work with">  I have a team that I plan to come and work with<br>
-            <input type="radio" name="interest" value="I have a team in mind but would be open to finding a new team at the event">  I have a team in mind but would be open to finding a new team at the event<br>
-            <input type="radio" name="interest" value="I want to join a new team at the event">  I want to join a new team at the event<br>
-            <input type="radio" name="interest" value="I want to work solo">  I want to work solo<br>
-            <label>If you have a team in mind please fill out the team information on your dashboard</label>
-        </div>
-        
-        <br>
+          <br />
 
-        <div class="field">
+          <div class="field">
             <label>
-                What are you hoping to get out of HackBeanpot? Let us know what you're excited to learn about, work on, or see at the event!
+              What are you hoping to get out of HackBeanpot? Let us know what
+              you're excited to learn about, work on, or see at the event!
             </label>
-            <textarea ng-model="user.profile.essay">
-            </textarea>
+            <textarea ng-model="user.profile.essay"> </textarea>
           </div>
 
           <div class="field">
             <label>If you could have any superpower what would it be?</label>
-            <input type="text"
-                   placeholder="Superpower"
-                   ng-model="user.profile.description">
+            <input
+              type="text"
+              placeholder="Superpower"
+              ng-model="user.profile.superpower"
+            />
           </div>
 
-          <br>
+          <br />
 
           <div class="field">
-              <label>Finally, anything else you want us to know about you?</label>
-              <input type="text"
-                     placeholder="If not, what’s your favorite animal?"
-                     ng-model="user.profile.description">
+            <label>Finally, anything else you want us to know about you?</label>
+            <input
+              type="text"
+              placeholder="If not, what’s your favorite animal?"
+              ng-model="user.profile.misc"
+            />
           </div>
 
-        <br>
+          <br />
 
-        <div class="thank you">
-          <p>
-              Thanks for your interest! We can’t wait to learn about you! We will let you know by the week of January 14, 2019 if you have a ticket or if you’ll be on our waitlist. Stay tuned! 
-          </p>
-          <p>
-              If you have any questions in the meantime, feel free to reach out to us at team@hackbeanpot.com, and visit our website https://hackbeanpot.com. Check out our social media @hackbeanpot to stay up to date with the latest HackBeanpot news!
-          </p>
-        </div>
+          <div class="thank you">
+            <p>
+              Thanks for your interest! We can’t wait to learn about you! We
+              will let you know by the week of January 14, 2019 if you have a
+              ticket or if you’ll be on our waitlist. Stay tuned!
+            </p>
+            <p>
+              If you have any questions in the meantime, feel free to reach out
+              to us at team@hackbeanpot.com, and visit our website
+              https://hackbeanpot.com. Check out our social media @hackbeanpot
+              to stay up to date with the latest HackBeanpot news!
+            </p>
+          </div>
 
-        <br>
+          <br />
 
-        <div class="field" ng-hide="regIsClosed">
-          <button type="submit"
-                  class="fluid ui purple button"
-                  ng-click="submitForm()">
-            Submit
-          </button>
-        </div>
-
+          <div class="field" ng-hide="regIsClosed">
+            <button
+              type="submit"
+              class="fluid ui purple button"
+              ng-click="submitForm()"
+            >
+              Submit
+            </button>
+          </div>
         </fieldset>
       </div>
     </div>

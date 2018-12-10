@@ -1,10 +1,11 @@
 # Project
-db/
-node_modules/
+/db
+/node_modules
 semantic/
+package-lock.json
 
 # Output
-app/client/build/
+/app/client/build/
 
 # macOS
 .DS_Store

@@ -54,7 +54,7 @@ module.exports = function(router) {
         return res.status(500).send(err);
       }
 
-      if (user._id == userId || user.admin){
+      if (user._id.toString() == userId || user.admin){
         return next();
       }
       return res.status(400).send({
@@ -148,6 +148,7 @@ module.exports = function(router) {
    * GET - Get a specific user.
    */
   router.get('/users/:id', isOwnerOrAdmin, function(req, res){
+    console.log("getting user")
     UserController.getById(req.params.id.toString(), defaultResponse(req, res));
   });
 

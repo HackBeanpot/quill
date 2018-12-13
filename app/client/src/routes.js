@@ -145,7 +145,7 @@ angular
           controller: "AdminUserCtrl",
           resolve: {
             user: function($stateParams, UserService) {
-              return UserService.get($stateParams.id);
+              return UserService.get($stateParams.id.toString());
             }
           }
         })

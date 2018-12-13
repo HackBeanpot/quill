@@ -124,7 +124,7 @@ module.exports = function(router){
    */
   router.post('/verify/resend',
     function(req, res, next){
-      var id = req.body.id;
+      var id = req.body.id.toString().toString();
       if (id){
         UserController.sendVerificationEmailById(id, function(err, user){
           if (err || !user){

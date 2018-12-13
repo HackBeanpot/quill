@@ -12,7 +12,7 @@ var email = 'hacker@school.edu';
 User.findOne({
   email: email
 }, function(err, user){
-  var id = user._id;
+  var id = user._id.toString();
 
   /* Change with old password */ 
   UserController.changePassword(

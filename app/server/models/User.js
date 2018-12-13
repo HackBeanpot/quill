@@ -340,7 +340,7 @@ schema.statics.verifyTempAuthToken = function(token, callback) {
       });
     }
 
-    return callback(null, payload.id);
+    return callback(null, payload.id.toString());
   });
 };
 

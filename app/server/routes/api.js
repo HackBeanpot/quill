@@ -46,7 +46,7 @@ module.exports = function(router) {
    */
   function isOwnerOrAdmin(req, res, next){
     var token = getToken(req);
-    var userId = req.params.id;
+    var userId = req.params.id.toString();
 
     UserController.getByToken(token, function(err, user){
 
@@ -148,7 +148,7 @@ module.exports = function(router) {
    * GET - Get a specific user.
    */
   router.get('/users/:id', isOwnerOrAdmin, function(req, res){
-    UserController.getById(req.params.id, defaultResponse(req, res));
+    UserController.getById(req.params.id.toString(), defaultResponse(req, res));
   });
 
   /**
@@ -158,7 +158,7 @@ module.exports = function(router) {
    */
   router.put('/users/:id/profile', isOwnerOrAdmin, function(req, res){
     var profile = req.body.profile;
-    var id = req.params.id;
+    var id = req.params.id.toString();
 
     UserController.updateProfileById(id, profile , defaultResponse(req, res));
   });
@@ -170,7 +170,7 @@ module.exports = function(router) {
    */
   router.put('/users/:id/confirm', isOwnerOrAdmin, function(req, res){
     var confirmation = req.body.confirmation;
-    var id = req.params.id;
+    var id = req.params.id.toString();
 
     UserController.updateConfirmationById(id, confirmation, defaultResponse(req, res));
   });
@@ -182,7 +182,7 @@ module.exports = function(router) {
    */
   router.post('/users/:id/decline', isOwnerOrAdmin, function(req, res){
     var confirmation = req.body.confirmation;
-    var id = req.params.id;
+    var id = req.params.id.toString();
 
     UserController.declineById(id, defaultResponse(req, res));
   });
@@ -192,7 +192,7 @@ module.exports = function(router) {
    * with the user making the request.
    */
   router.get('/users/:id/team', isOwnerOrAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
     UserController.getTeammates(id, defaultResponse(req, res));
   });
 
@@ -204,7 +204,7 @@ module.exports = function(router) {
    */
   router.put('/users/:id/team', isOwnerOrAdmin, function(req, res){
     var code = req.body.code;
-    var id = req.params.id;
+    var id = req.params.id.toString();
 
     UserController.createOrJoinTeam(id, code, defaultResponse(req, res));
 
@@ -214,7 +214,7 @@ module.exports = function(router) {
    * Remove a user from a team.
    */
   router.delete('/users/:id/team', isOwnerOrAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
 
     UserController.leaveTeam(id, defaultResponse(req, res));
   });
@@ -229,7 +229,7 @@ module.exports = function(router) {
   router.put('/users/:id/password', isOwnerOrAdmin, function(req, res){
     return res.status(304).send();
     // Currently disable.
-    // var id = req.params.id;
+    // var id = req.params.id.toString();
     // var old = req.body.oldPassword;
     // var pass = req.body.newPassword;
 
@@ -248,7 +248,7 @@ module.exports = function(router) {
    */
   router.post('/users/:id/admit', isAdmin, function(req, res){
     // Accept the hacker. Admin only
-    var id = req.params.id;
+    var id = req.params.id.toString();
     var user = req.user;
     UserController.admitUser(id, user, defaultResponse(req, res));
   });
@@ -257,7 +257,7 @@ module.exports = function(router) {
    * Check in a user. ADMIN ONLY, DUH
    */
   router.post('/users/:id/checkin', isAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
     var user = req.user;
     UserController.checkInById(id, user, defaultResponse(req, res));
   });
@@ -266,7 +266,7 @@ module.exports = function(router) {
    * Check in a user. ADMIN ONLY, DUH
    */
   router.post('/users/:id/checkout', isAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
     var user = req.user;
     UserController.checkOutById(id, user, defaultResponse(req, res));
   });
@@ -275,7 +275,7 @@ module.exports = function(router) {
    * Make user an admin
    */
   router.post('/users/:id/makeadmin', isAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
     var user = req.user;
     UserController.makeAdminById(id, user, defaultResponse(req, res));
   });
@@ -284,7 +284,7 @@ module.exports = function(router) {
    * Demote user
    */
   router.post('/users/:id/removeadmin', isAdmin, function(req, res){
-    var id = req.params.id;
+    var id = req.params.id.toString();
     var user = req.user;
     UserController.removeAdminById(id, user, defaultResponse(req, res));
   });

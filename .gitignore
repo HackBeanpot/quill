@@ -2,7 +2,6 @@
 /db
 /node_modules
 semantic/
-package-lock.json
 
 # Output
 /app/client/build/

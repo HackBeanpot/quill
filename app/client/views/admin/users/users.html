@@ -126,49 +126,59 @@
               <!-- Verified -->
               <i
                 ng-if="user.verified"
-                class="green check circle icon">
+                class="green check circle icon"
+                title="verified">
               </i>
               <i
                 ng-if="!user.verified"
-                class="red remove circle icon">
+                class="red remove circle icon"
+                title="not verified">
               </i>
 
               <!-- Submitted -->
               <i
                 ng-if="user.status.completedProfile"
-                class="green check circle icon">
+                class="green check circle icon"
+                title="submitted">
               </i>
               <i
                 ng-if="!user.status.completedProfile"
-                class="red remove circle icon">
+                class="red remove circle icon"
+                title="not submitted">
               </i>
 
               <!-- Admitted -->
               <i
                 ng-if="user.status.admitted"
-                class="green check circle icon">
+                class="green check circle icon"
+                title="admitted">
               </i>
               <i
                 ng-if="!user.status.admitted"
-                class="thin circle icon">
+                class="thin circle icon"
+                title="not admitted">
               </i>
 
               <!-- Confirmed -->
               <i
                 ng-if="!user.status.admitted"
-                class="circle thin icon">
+                class="circle thin icon"
+                title="not admitted">
               </i>
               <i
                 ng-if="user.status.admitted && user.status.confirmed"
-                class="green check circle icon">
+                class="green check circle icon"
+                title="admitted and confirmed">
               </i>
               <i
                 ng-if="user.status.admitted && !user.status.confirmed && !user.status.declined"
-                class="question icon">
+                class="question icon"
+                title="admitted, not yet confirmed or declined">
               </i>
               <i
                 ng-if="user.status.admitted && user.status.declined"
-                class="red remove circle icon">
+                class="red remove circle icon"
+                title="admitted and declined">
               </i>
 
             </td>

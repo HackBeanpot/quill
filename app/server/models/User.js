@@ -55,7 +55,7 @@ var profile = {
     max: 300
   },
 
-  dietary-restrictions: {
+  dietaryRestrictions: {
     type: String,
     min: 0,
     max: 300
@@ -79,7 +79,7 @@ var profile = {
     max: 300
   },
 
-  topics-technologies: {
+  topicsTechnologies: {
     type: String,
     min: 0,
     max: 1500

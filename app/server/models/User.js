@@ -43,7 +43,19 @@ var profile = {
     max: 1500
   },
 
+  background: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
   activities: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
+  dietary-restrictions: {
     type: String,
     min: 0,
     max: 300
@@ -59,6 +71,18 @@ var profile = {
     type: String,
     min: 0,
     max: 300
+  },
+
+  animal: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
+  topics-technologies: {
+    type: String,
+    min: 0,
+    max: 1500
   },
 
   misc: {

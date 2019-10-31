@@ -281,6 +281,15 @@ angular.module('reg')
                 name: 'School',
                 value: user.profile.school
               },{
+                name: 'Ethnicity',
+                value: user.profile.ethnicity
+              },{
+                name: 'Major',
+                value: user.profile.major
+              },{
+                name: 'Minor',
+                value: user.profile.minor
+              },{
                 name: 'Graduation Year',
                 value: user.profile.graduationYear
               },{
@@ -289,7 +298,23 @@ angular.module('reg')
               },{
                 name: 'Essay',
                 value: user.profile.essay
+              },{
+                name: 'Superpower',
+                value: user.profile.superpower
+              },{
+                name: 'Animal',
+                value: user.profile.animal
+              },{
+                name: 'Activities',
+                value: user.profile.activities
+              },{
+                name: 'Topics and Technologies',
+                value: user.profile.topicsTechnologies
+              },{
+                name: 'Background',
+                value: user.profile.background
               }
+
             ]
           },{
             name: 'Confirmation',

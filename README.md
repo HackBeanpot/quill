@@ -101,6 +101,8 @@ Edit the configuration file in `.env` for your setup, and then run the applicati
 gulp server
 ```
 
+In our application run `npm run watch` instead.
+
 # Customizing for your event
 
 ###### _If you're using Quill for your event, please add yourself to this [list][users]. It takes less than a minute, but knowing that our software is helping real events keeps us going ♥_

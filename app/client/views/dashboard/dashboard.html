@@ -65,7 +65,7 @@
           <p>
             {{ DASHBOARD.UNVERIFIED }}
           </p>
-          <div class="ui purple button" ng-click="resendEmail()">
+          <div class="ui button primary-cta" ng-click="resendEmail()">
             Resend verification email
           </div>
         </div>
@@ -85,7 +85,7 @@
           <strong>
             Confirmation Deadline:
           </strong>
-          {{ timeConfirm }}
+          {{ timeConfirm }})
         </div>
 
         <div
@@ -118,20 +118,20 @@
           <p>
             {{ DASHBOARD.SUBMITTED }}
           </p>
-          <div class="ui purple button"
+          <div class="ui button secondary-cta"
                ui-sref="app.application">
             Edit your application
           </div>
 
           <div
-            class="ui pink button"
+            class="ui button primary-cta"
             ng-show="!user.teamCode"
             ui-sref="app.team">
             Create or join a team
           </div>
 
           <div
-            class="ui pink button"
+            class="ui button primary-cta"
             ng-show="user.teamCode"
             ui-sref="app.team">
             View your Team
@@ -160,13 +160,13 @@
             ng-bind-html="waitlistText">
           </div>
 
-          <div class="ui purple button"
+          <div class="ui button primary-cta"
                ui-sref="app.application">
             View your application
           </div>
 
           <div
-            class="ui pink button"
+            class="ui button secondary-cta"
             ng-show="user.teamCode"
             ui-sref="app.team">
             View your Team
@@ -179,7 +179,7 @@
 
           <div class="markdown">
             <h4>
-                {{ DASHBOARD.ADMITTED_AND_CAN_CONFIRM_TITLE }}
+                {{ DASHBOARD.ADMITTED_AND_CAN_CONFIRM_TITLE }})
             </h4>
           </div>
 
@@ -194,7 +194,7 @@
             </h4>
           </div>
 
-          <div class="ui purple button"
+          <div class="ui button primary-cta"
                ui-sref="app.confirmation">
             Confirm your spot
           </div>

@@ -73,29 +73,6 @@
             </select>
           </div>
 
-          <div class="field">
-            <label>
-              Will you be needing hardware?
-            </label>
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.wantsHardware">
-              <label> Yes, I would like to use hardware in my hack. </label>
-            </div>
-          </div>
-
-          <div
-            class="field"
-            ng-show="user.confirmation.wantsHardware">
-            <label>
-              What kind of hardware would be useful for you?
-            </label>
-            <p>
-              We will have a hardware checkout, and we'll try our best to provide things that would be useful to you - however, we can't guarantee everything. We will publish a list of available hardware closer to the day of the event.
-            </p>
-            <input type="text" ng-model="user.confirmation.hardware">
-          </div>
-
-
           <br>
           <br>
 
@@ -136,74 +113,6 @@
               class="ui pink button">
               Upload
             </a>
-          </div>
-
-          <br>
-          <br>
-
-          <div class="divided title">Hosting Details</div>
-
-          <p>
-            Would you like us to find you a host? We can match you with someone so you can catch some zzz's the night before and/or the night of the event!
-          </p>
-
-          <div class="field">
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.hostNeededFri">
-              <label>
-                <strong>
-                  I would like a host for Friday, Sept. 18th.
-                </strong>
-              </label>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.hostNeededSat">
-              <label>
-                <strong>
-                I would like a host for Saturday, Sept. 19th.
-                </strong>
-              </label>
-            </div>
-          </div>
-
-          <div
-            ng-show="user.confirmation.hostNeededFri || user.confirmation.hostNeededSat">
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.genderNeutral">
-                <label> I would be okay with gender neutral housing. </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.smokingFriendly">
-                <label> I would be okay in housing with smoking-friendly policies. </label>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input type="checkbox" ng-model="user.confirmation.catFriendly">
-                <label> I would be okay in housing that has cats. Meow! </label>
-              </div>
-            </div>
-
-
-            <div class="field">
-              <label>
-                Let us know if there's anything else we should know about matching you with a host.
-              </label>
-              <textarea
-                name="hostNotes"
-                ng-model="user.confirmation.hostNotes">
-              </textarea>
-            </div>
-
           </div>
 
           <br>

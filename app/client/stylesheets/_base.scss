@@ -36,14 +36,14 @@
   background-color: #d9593f !important;
 }
 
-.inline-link {
-  a:not([role='button']) {
-    color: $dark-green;
-    transition: color 0.3s ease;
 
-    &:hover {
-      color: $not-so-dark-green;
-      text-decoration: underline;
-    }
+a.inline-link {
+  color: $dark-green;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $not-so-dark-green;
+    text-decoration: underline;
   }
 }
+

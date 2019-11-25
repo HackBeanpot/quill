@@ -103,6 +103,20 @@
                  ng-model="user.profile.minor">
         </div>
 
+        <div class="field">
+          <label>What's your favorite hype song?</label>
+          <input type="text"
+                 placeholder="Hype"
+                 ng-model="user.profile.hypesong">
+        </div>
+
+        <div class="field">
+          <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;))</label>
+          <input type="text"
+                 placeholder="The correct answer is hack flavored... just kidding."
+                 ng-model="user.profile.jellybean">
+        </div>
+
         <br>
 
         <div class="divided title">Interests and Experience</div>
@@ -112,26 +126,30 @@
               Let us know what you’re interested in! Don’t be shy. If you’ve been looking for the opportunity to gain some experience, HackBeanpot is the perfect place to explore and learn something new!
           </p>
         </div>
-        
+
         <br>
-        
+
         <div class="field">
             <label>Tech Interests</label>
             <input type="checkbox" name="interest" value="Hardware">  Hardware<br>
             <input type="checkbox" name="interest" value="Web Development">  Web Development<br>
             <input type="checkbox" name="interest" value="Mobile App Development">  Mobile App Development<br>
             <input type="checkbox" name="interest" value="AI/Machine Learning">  AI/Machine Learning<br>
-            <input type="checkbox" name="interest" value="Data Analytics">  Data Analytics<br>
+            <input type="checkbox" name="interest" value="Data Analytics">  Data Science / Data Visualization / Data Analytics<br>
             <input type="checkbox" name="interest" value="AR/VR">  AR/VR<br>
             <input type="checkbox" name="interest" value="Natural Language Processing">  Natural Language Processing<br>
             <input type="checkbox" name="interest" value="UI/UX Design">  UI/UX Design<br>
-            <input type="checkbox" name="interest" value="Project Management">  Project Management<br>            
+            <input type="checkbox" name="interest" value="IoT">  IoT<br>
+            <input type="checkbox" name="interest" value="Cybersecurity">  Cybersecurity<br>
+            <input type="checkbox" name="interest" value="HCI">  Human-Computer Interaction<br>
+            <input type="checkbox" name="interest" value="Game Development">  Game Development<br>
+            <input type="checkbox" name="interest" value="CS Theory">  CS Theory / Algorithms<br>
         </div>
         
         <br>
 
         <div class="field">
-          <label>What’s your background? Are you a chemical engineer? A web developer? An entrepreneur? A marketing specialist? An artist? A biologist? Or just a curious mind?</label>
+          <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
           <input type="text"
                  placeholder="Give us a snapshot of your skillset!"
                  ng-model="user.profile.background">
@@ -141,10 +159,9 @@
 
         <div class="field">
             <label>Hacking Experience</label>
-            <input type="checkbox" name="interest" value="This will be my first time at a hackathon">  This will be my first time at a hackathon<br>
-            <input type="checkbox" name="interest" value="I have been to one or more hackathons before">  I have been to one or more hackathons before<br>
-            <input type="checkbox" name="interest" value="I have been to HackBeanpot before">  I have been to HackBeanpot before<br>
-            <input type="checkbox" name="interest" value="I would be interested in a first time hacker orientation">  I would be interested in a first time hacker orientation<br>         
+            <input type="checkbox" name="interest" value="First Hackathon">  First time at a hackathon?<br>
+            <input type="checkbox" name="interest" value="First HBP">  First time at HackBeanpot?<br>
+            <input type="checkbox" name="interest" value="Orientation Interest">  I would be interested in a first time hacker orientation<br>
         </div>
         
         <br>
@@ -159,10 +176,10 @@
   
         <br>
 
-        <div class="divided title">Some Final Questions</div>
+        <div class="divided title">HackBeanpot-Related Things</div>
 
         <div class="field">
-            <label>How did you find us?</label>
+            <label>How did you hear about us?</label>
             <input type="checkbox" name="interest" value="Friends">  Friends<br>
             <input type="checkbox" name="interest" value="Facebook">  Facebook<br>
             <input type="checkbox" name="interest" value="Twitter">  Twitter<br>
@@ -175,7 +192,16 @@
         <br>
 
         <div class="field">
-            <label>What’s a hackathon without doing random things at random times? List some activities you would like to participate in: (i.e. yoga, coding challenges,  minute to win it games)</label>
+          <label>Did you attend any events hosted by HackBeanpot in Fall 2019? (Multi-select)</label>
+          <input type="checkbox" name="interest" value="Cosmo">  CoSMO x HBP: Intro to Hackathons (9/25)<br>
+          <input type="checkbox" name="interest" value="Tufts">  HBP @ Tufts PolyHack (10/11)<br>
+          <input type="checkbox" name="interest" value="WISE">  HBP x WISE x NUWIT: Breaking into Data Visualization (11/3)<br>
+        </div>
+
+        <br>
+
+        <div class="field">
+            <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.)</label>
             <input type="text"
                    placeholder="Activities"
                    ng-model="user.profile.activities">
@@ -185,9 +211,9 @@
 
         <div class="field">
             <label>
-                Are there any specific topics/technologies you'd be interested in attending a talk or workshop about? (i.e. React, team-building, UI/UX, career development)
+              What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission)
             </label>
-            <textarea ng-model="user.profile.topicsTechnologies">
+            <textarea placeholder="Ideas or topics" ng-model="user.profile.topicsTechnologies">
             </textarea>
         </div>
 
@@ -215,29 +241,11 @@
 
         <div class="field">
             <label>
-                What are you hoping to get out of HackBeanpot? Let us know what you're excited to learn about, work on, or see at the event!
+              Our theme is “Sprout” this year, which represents growth in new skills, relationships, and experiences. With this in mind, what are you hoping to get out of HackBeanpot? What do you want to walk away having learned or experienced?
             </label>
             <textarea ng-model="user.profile.essay">
             </textarea>
           </div>
-
-          <div class="field">
-            <label>If you could have any superpower what would it be?</label>
-            <input type="text"
-                   placeholder="Superpower"
-                   ng-model="user.profile.superpower">
-          </div>
-
-          <br>
-
-          <div class="field">
-              <label>Finally, anything else you want us to know about you?</label>
-              <input type="text"
-                     placeholder="If not, what’s your favorite animal?"
-                     ng-model="user.profile.animal">
-          </div>
-
-        <br>
 
         <div class="thank you">
           <p>

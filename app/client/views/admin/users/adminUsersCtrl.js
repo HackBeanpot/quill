@@ -290,20 +290,20 @@ angular.module('reg')
                 name: 'Minor',
                 value: user.profile.minor
               },{
+                name: 'Hype Song',
+                value: user.profile.hypesong
+              },{
+                name: 'Jellybean Flavor',
+                value: user.profile.jellybean
+              },{
                 name: 'Graduation Year',
-                value: user.profile.graduationYear
+                value: user.profile.year
               },{
                 name: 'Description',
                 value: user.profile.description
               },{
                 name: 'Essay',
                 value: user.profile.essay
-              },{
-                name: 'Superpower',
-                value: user.profile.superpower
-              },{
-                name: 'Animal',
-                value: user.profile.animal
               },{
                 name: 'Activities',
                 value: user.profile.activities

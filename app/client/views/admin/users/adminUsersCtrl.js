@@ -339,26 +339,6 @@ angular.module('reg')
                 value: user.confirmation.website
               }
             ]
-          },{
-            name: 'Travel',
-            fields: [
-              {
-                name: 'Address',
-                value: user.confirmation.address ? [
-                  user.confirmation.address.line1,
-                  user.confirmation.address.line2,
-                  user.confirmation.address.city,
-                  ',',
-                  user.confirmation.address.state,
-                  user.confirmation.address.zip,
-                  ',',
-                  user.confirmation.address.country,
-                ].join(' ') : ''
-              },{
-                name: 'Additional Notes',
-                value: user.confirmation.notes
-              }
-            ]
           }
         ];
       }

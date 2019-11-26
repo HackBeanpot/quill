@@ -299,11 +299,8 @@ angular.module('reg')
                 name: 'Graduation Year',
                 value: user.profile.year
               },{
-                name: 'Description',
-                value: user.profile.description
-              },{
-                name: 'Essay',
-                value: user.profile.essay
+                name: 'Background',
+                value: user.profile.background
               },{
                 name: 'Activities',
                 value: user.profile.activities
@@ -311,8 +308,14 @@ angular.module('reg')
                 name: 'Topics and Technologies',
                 value: user.profile.topicsTechnologies
               },{
-                name: 'Background',
-                value: user.profile.background
+                name: 'Dietary Restrictions',
+                value: user.profile.dietaryRestrictions
+              },{
+                name: 'Shirt Size',
+                value: user.profile.shirtSize
+              },{
+                name: 'Essay',
+                value: user.profile.essay
               }
 
             ]
@@ -325,12 +328,6 @@ angular.module('reg')
               },{
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
-              },{
-                name: 'Shirt Size',
-                value: user.confirmation.shirtSize
-              },{
-                name: 'Major',
-                value: user.confirmation.major
               },{
                 name: 'Github',
                 value: user.confirmation.github

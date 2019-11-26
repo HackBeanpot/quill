@@ -48,6 +48,73 @@ angular.module('reg')
 
       // -------------------------------
 
+      // -------------------------------
+      // Hacker Experience
+
+      var hackerExperience = {
+        'First time at a hackathon?': false,
+        'First time at HackBeanpot?': false,
+        'I would be interested in a first time hacker orientation': false
+      };
+
+      if (user.profile.hackerExperience){
+        user.profile.hackerExperience.forEach(function(he){
+          if (he in hackerExperience){
+            hackerExperience[he] = true;
+          }
+        });
+      }
+
+      $scope.hackerExperience = hackerExperience;
+
+      // -------------------------------
+
+      // -------------------------------
+      // Heard About Us
+
+      var heardAboutUs = {
+        'Friends': false,
+        'Facebook': false,
+        'Twitter': false,
+        'Instagram': false,
+        'Outreach Event': false,
+        'Our Website': false,
+        'Blog Post': false
+      };
+
+      if (user.profile.heardAboutUs){
+        user.profile.heardAboutUs.forEach(function(hau){
+          if (hau in heardAboutUs){
+            heardAboutUs[hau] = true;
+          }
+        });
+      }
+
+      $scope.heardAboutUs = heardAboutUs;
+
+      // -------------------------------
+
+      // -------------------------------
+      // HBP Outreach Events
+
+      var hbpOutreachEvents = {
+        'CoSMO x HBP: Intro to Hackathons (9/25)': false,
+        'HBP @ Tufts PolyHack (10/11)': false,
+        'HBP x WISE x NUWIT: Breaking into Data Visualization (11/3)': false
+      };
+
+      if (user.profile.hbpOutreachEvents){
+        user.profile.hbpOutreachEvents.forEach(function(hoe){
+          if (hoe in hbpOutreachEvents){
+            hbpOutreachEvents[hoe] = true;
+          }
+        });
+      }
+
+      $scope.hbpOutreachEvents = hbpOutreachEvents;
+
+      // -------------------------------
+
       // Populate the school dropdown
       populateSchools();
       _setupForm();
@@ -96,7 +163,7 @@ angular.module('reg')
 
       function _updateUser(e){
         var profile = $scope.user.profile;
-        // Get the dietary restrictions as an array
+        // Get the tech interests as an array
         var tis = [];
         Object.keys($scope.techInterests).forEach(function(key){
           if ($scope.techInterests[key]){
@@ -104,6 +171,34 @@ angular.module('reg')
           }
         });
         profile.techInterests = tis;
+
+        // Get the hacker experience as an array
+        var hexp = [];
+        Object.keys($scope.hackerExperience).forEach(function(key){
+          if ($scope.hackerExperience[key]){
+            hexp.push(key);
+          }
+        });
+        profile.hackerExperience = hexp;
+
+        // Get the heard about us as an array
+        var hauArray = [];
+        Object.keys($scope.heardAboutUs).forEach(function(key){
+          if ($scope.heardAboutUs[key]){
+            hauArray.push(key);
+          }
+        });
+        profile.heardAboutUs = hauArray;
+
+        // Get the hbp outreach events as an array
+        var hoes = [];
+        Object.keys($scope.hbpOutreachEvents).forEach(function(key){
+          if ($scope.hbpOutreachEvents[key]){
+            hoes.push(key);
+          }
+        });
+        profile.hbpOutreachEvents = hoes;
+        
 
         UserService
           .updateProfile(Session.getUserId(), profile)

@@ -129,11 +129,12 @@
 
         <br>
 
+        <div class="checkbox-label"> Hacking Experience </div>
         <div class="field"
-          ng-repeat="(key, value) in techInterests">
+          ng-repeat="(key, value) in hackerExperience">
 
           <div class="ui checkbox">
-            <input type="checkbox" ng-model="techInterests[key]" />
+            <input type="checkbox" ng-model="hackerExperience[key]" />
             <label>{{key}}</label>
           </div>
 
@@ -150,11 +151,15 @@
 
         <br>
 
-        <div class="field">
-            <label>Hacking Experience</label>
-            <input type="checkbox" name="interest" value="First Hackathon">  First time at a hackathon?<br>
-            <input type="checkbox" name="interest" value="First HBP">  First time at HackBeanpot?<br>
-            <input type="checkbox" name="interest" value="Orientation Interest">  I would be interested in a first time hacker orientation<br>
+        <div class="checkbox-label"> Tech Interests </div>
+        <div class="field"
+          ng-repeat="(key, value) in techInterests">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="techInterests[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
         
         <br>
@@ -171,24 +176,28 @@
 
         <div class="divided title">HackBeanpot-Related Things</div>
 
-        <div class="field">
-            <label>How did you hear about us?</label>
-            <input type="checkbox" name="interest" value="Friends">  Friends<br>
-            <input type="checkbox" name="interest" value="Facebook">  Facebook<br>
-            <input type="checkbox" name="interest" value="Twitter">  Twitter<br>
-            <input type="checkbox" name="interest" value="Instagram">  Instagram<br>
-            <input type="checkbox" name="interest" value="Outreach Event">  Outreach Event<br>
-            <input type="checkbox" name="interest" value="Our Website">  Our Website<br>
-            <input type="checkbox" name="interest" value="Blog Post">  Blog Post<br>
+        <div class="checkbox-label"> How did you hear about us? </div>
+        <div class="field"
+          ng-repeat="(key, value) in heardAboutUs">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="heardAboutUs[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
 
         <br>
 
-        <div class="field">
-          <label>Did you attend any events hosted by HackBeanpot in Fall 2019? (Multi-select)</label>
-          <input type="checkbox" name="interest" value="Cosmo">  CoSMO x HBP: Intro to Hackathons (9/25)<br>
-          <input type="checkbox" name="interest" value="Tufts">  HBP @ Tufts PolyHack (10/11)<br>
-          <input type="checkbox" name="interest" value="WISE">  HBP x WISE x NUWIT: Breaking into Data Visualization (11/3)<br>
+        <div class="checkbox-label"> Did you attend any events hosted by HackBeanpot in Fall 2019? </div>
+        <div class="field"
+          ng-repeat="(key, value) in hbpOutreachEvents">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="hbpOutreachEvents[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
 
         <br>

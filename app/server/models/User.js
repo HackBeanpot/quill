@@ -62,9 +62,19 @@ var profile = {
   },
 
   techInterests: {
-    type: [String],
-    min: 0,
-    max: 300
+    type: [String]
+  },
+
+  hackerExperience: {
+    type: [String]
+  },
+
+  heardAboutUs: {
+    type: [String]
+  },
+
+  hbpOutreachEvents: {
+    type: [String]
   },
 
   hypesong: {

@@ -105,14 +105,14 @@ var profile = {
   gender: {
     type: String,
     enum: {
-      values: "M F O N".split(" ")
+      values: ["M", "F", "O", "N"]
     }
   },
 
   ethnicity: {
     type: String,
     enum: {
-      values: "A B C D E F G H".split(" ")
+      values: ["A", "B", "C", "D", "E", "F", "G", "H"]
     }
   },
 

@@ -14,15 +14,39 @@ angular.module('reg')
     function($scope, $rootScope, $state, $http, currentUser, settings, Session, UserService) {
 
       // Set up the user
-      $scope.user = currentUser.data;
+      var user = currentUser.data;
+      $scope.user = user;
 
-      // Is the student from MIT?
-      $scope.isMitStudent = $scope.user.email.split('@')[1] == 'mit.edu';
+      // -------------------------------
+      // All this just for tech interests checkboxes fml
 
-      // If so, default them to adult: true
-      if ($scope.isMitStudent){
-        $scope.user.profile.adult = true;
+      var techInterests = {
+        'Hardware': false,
+        'Web Development': false,
+        'Mobile App Development': false,
+        'AI/Machine Learning': false,
+        ' Data Science / Data Visualization / Data Analytics': false,
+        'AR/VR': false,
+        'Natural Language Processing': false,
+        'UI/UX Design': false,
+        'IoT': false,
+        'Cybersecurity': false,
+        'Human Computer Interaction': false,
+        'Game Development': false,
+        'CS Theory / Algorithms': false
+      };
+
+      if (user.profile.techInterests){
+        user.profile.techInterests.forEach(function(techInterest){
+          if (techInterest in techInterests){
+            techInterests[techInterest] = true;
+          }
+        });
       }
+
+      $scope.techInterests = techInterests;
+
+      // -------------------------------
 
       // Populate the school dropdown
       populateSchools();
@@ -71,8 +95,18 @@ angular.module('reg')
       }
 
       function _updateUser(e){
+        var profile = $scope.user.profile;
+        // Get the dietary restrictions as an array
+        var tis = [];
+        Object.keys($scope.techInterests).forEach(function(key){
+          if ($scope.techInterests[key]){
+            tis.push(key);
+          }
+        });
+        profile.techInterests = tis;
+
         UserService
-          .updateProfile(Session.getUserId(), $scope.user.profile)
+          .updateProfile(Session.getUserId(), profile)
           .then(response => {
             swal("Awesome!", "Your application has been saved.", "success").then(value => {
               $state.go("app.dashboard");

@@ -61,8 +61,8 @@ var profile = {
     max: 300
   },
 
-  interests: {
-    type: String,
+  techInterests: {
+    type: [String],
     min: 0,
     max: 300
   },

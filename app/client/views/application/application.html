@@ -129,21 +129,14 @@
 
         <br>
 
-        <div class="field">
-            <label>Tech Interests</label>
-            <input type="checkbox" name="interest" value="Hardware">  Hardware<br>
-            <input type="checkbox" name="interest" value="Web Development">  Web Development<br>
-            <input type="checkbox" name="interest" value="Mobile App Development">  Mobile App Development<br>
-            <input type="checkbox" name="interest" value="AI/Machine Learning">  AI/Machine Learning<br>
-            <input type="checkbox" name="interest" value="Data Analytics">  Data Science / Data Visualization / Data Analytics<br>
-            <input type="checkbox" name="interest" value="AR/VR">  AR/VR<br>
-            <input type="checkbox" name="interest" value="Natural Language Processing">  Natural Language Processing<br>
-            <input type="checkbox" name="interest" value="UI/UX Design">  UI/UX Design<br>
-            <input type="checkbox" name="interest" value="IoT">  IoT<br>
-            <input type="checkbox" name="interest" value="Cybersecurity">  Cybersecurity<br>
-            <input type="checkbox" name="interest" value="HCI">  Human-Computer Interaction<br>
-            <input type="checkbox" name="interest" value="Game Development">  Game Development<br>
-            <input type="checkbox" name="interest" value="CS Theory">  CS Theory / Algorithms<br>
+        <div class="field"
+          ng-repeat="(key, value) in techInterests">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="techInterests[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
         
         <br>

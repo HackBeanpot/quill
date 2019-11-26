@@ -340,8 +340,13 @@ angular.module('reg')
               },{
                 name: 'HBP Outreach Events',
                 value: hbpOutreachEvents.join(', ')
+              },{
+                name: 'Hacker Experience',
+                value: user.profile.hackerExperience
+              },{
+                name: 'What is their plan for a team?',
+                value: user.profile.teamPlan
               }
-
             ]
           },{
             name: 'Confirmation',

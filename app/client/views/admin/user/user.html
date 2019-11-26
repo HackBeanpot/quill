@@ -162,9 +162,14 @@
       </div>
 
       <div class="field">
-        <label> Hacking Experience </label>
-        <input
-          type="text" ng-model="selectedUser.profile.hackerExperience" />
+        <label>What is your experience with Hackathons? </label>
+        <select
+          name="hackerExperience"
+          ng-model="selectedUser.profile.hackerExperience">
+          <option value="First time at a hackathon?">First time at a hackathon?</option>
+          <option value="First time at HackBeanpot?">First time at HackBeanpot?</option>
+          <option value="I would be interested in a first time hacker orientation">I would be interested in a first time hacker orientation</option>
+        </select>
       </div>
 
       <div class="field">
@@ -206,6 +211,18 @@
         <textarea ng-model="selectedUser.profile.essay">
         </textarea>
       </div>
+
+      <div class="field">
+        <label> Are you planning on coming with a team? </label>
+        <select
+          name="teamPlan"
+          ng-model="user.profile.teamPlan">
+          <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
+          <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
+          <option value="I want to join a new team at the event">I want to join a new team at the event</option>
+          <option value="I want to work solo">I want to work solo.</option>
+        </select>
+      </div> 
 
       <div class="field">
         <div

@@ -49,27 +49,6 @@ angular.module('reg')
       // -------------------------------
 
       // -------------------------------
-      // Hacker Experience
-
-      var hackerExperience = {
-        'First time at a hackathon?': false,
-        'First time at HackBeanpot?': false,
-        'I would be interested in a first time hacker orientation': false
-      };
-
-      if (user.profile.hackerExperience){
-        user.profile.hackerExperience.forEach(function(he){
-          if (he in hackerExperience){
-            hackerExperience[he] = true;
-          }
-        });
-      }
-
-      $scope.hackerExperience = hackerExperience;
-
-      // -------------------------------
-
-      // -------------------------------
       // Heard About Us
 
       var heardAboutUs = {
@@ -171,15 +150,6 @@ angular.module('reg')
           }
         });
         profile.techInterests = tis;
-
-        // Get the hacker experience as an array
-        var hexp = [];
-        Object.keys($scope.hackerExperience).forEach(function(key){
-          if ($scope.hackerExperience[key]){
-            hexp.push(key);
-          }
-        });
-        profile.hackerExperience = hexp;
 
         // Get the heard about us as an array
         var hauArray = [];

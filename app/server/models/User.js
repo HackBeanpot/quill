@@ -27,7 +27,7 @@ var profile = {
   year: {
     type: String,
     enum: {
-      values: "H 1 2 3 4 5 G".split(" ")
+      values: ["H", "1", "2", "3", "4", "5", "G"]
     }
   },
 
@@ -66,7 +66,15 @@ var profile = {
   },
 
   hackerExperience: {
-    type: [String]
+    type: String,
+    enum: {
+      values: ['First time at a hackathon?', 'First time at HackBeanpot?', 'I would be interested in a first time hacker orientation']
+    }
+  },
+
+  teamPlan: {
+    type: String,
+    enum: ['I have a team that I plan to come and work with', 'I have a team in mind but would be open to finding a new team at the event', 'I want to join a new team at the event', 'I want to work solo']
   },
 
   heardAboutUs: {

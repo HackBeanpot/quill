@@ -129,15 +129,15 @@
 
         <br>
 
-        <div class="checkbox-label"> Hacking Experience </div>
-        <div class="field"
-          ng-repeat="(key, value) in hackerExperience">
-
-          <div class="ui checkbox">
-            <input type="checkbox" ng-model="hackerExperience[key]" />
-            <label>{{key}}</label>
-          </div>
-
+        <div class="field">
+          <label>What is your experience with Hackathons? </label>
+          <select
+            name="hackerExperience"
+            ng-model="user.profile.hackerExperience">
+            <option value="First time at a hackathon?">First time at a hackathon?</option>
+            <option value="First time at HackBeanpot?">First time at HackBeanpot?</option>
+            <option value="I would be interested in a first time hacker orientation">I would be interested in a first time hacker orientation</option>
+          </select>
         </div>
         
         <br>
@@ -231,12 +231,15 @@
         <br>
 
         <div class="field">
-            <label>Forming your winning team - Please select the option most relevant to you</label>
-            <input type="radio" name="interest" value="I have a team that I plan to come and work with">  I have a team that I plan to come and work with<br>
-            <input type="radio" name="interest" value="I have a team in mind but would be open to finding a new team at the event">  I have a team in mind but would be open to finding a new team at the event<br>
-            <input type="radio" name="interest" value="I want to join a new team at the event">  I want to join a new team at the event<br>
-            <input type="radio" name="interest" value="I want to work solo">  I want to work solo<br>
-            <label>If you have a team in mind please fill out the team information on your dashboard</label>
+          <label> Are you planning on coming with a team? </label>
+          <select
+            name="teamPlan"
+            ng-model="user.profile.teamPlan">
+            <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
+            <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
+            <option value="I want to join a new team at the event">I want to join a new team at the event</option>
+            <option value="I want to work solo">I want to work solo.</option>
+          </select>
         </div>
         
         <br>

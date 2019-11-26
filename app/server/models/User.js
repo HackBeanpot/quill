@@ -129,8 +129,6 @@ var confirmation = {
       values: "XS S M L XL XXL WXS WS WM WL WXL WXXL".split(" ")
     }
   },
-  wantsHardware: Boolean,
-  hardware: String,
 
   major: String,
   github: String,
@@ -396,9 +394,8 @@ schema.statics.validateProfile = function(profile, cb) {
   return cb(
     !(
       profile.name.length > 0 &&
-      profile.adult &&
       profile.school.length > 0 &&
-      ["2016", "2017", "2018", "2019"].indexOf(profile.graduationYear) > -1 &&
+      "H 1 2 3 4 5 G".split(" ").indexOf(profile.year) > -1 &&
       ["M", "F", "O", "N"].indexOf(profile.gender) > -1
     )
   );

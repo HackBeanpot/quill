@@ -2,8 +2,11 @@
   <div class="divided title">
     Team
   </div>
+  
   <div class="ui stackable centered page grid">
     <div class="column">
+      <p> In order to create a team, please enter a unique name below. In order to join an existing team, enter the name below. Make sure you confirm that everyone on your team is as expected! Also, please note that team names are <strong>case sensitive</strong>!</p>
+      <p> Don't have a team?  Don't worry! At the event, we'll be having a team formation event where you'll meet fellow attendees and create a team on the day. </p>
       <div
         class="ui error message"
         ng-show="error">
@@ -37,7 +40,7 @@
 
           <div class="field">
             <button
-              class="ui fluid pink button"
+              class="ui fluid button primary-cta"
               ng-click="joinTeam()">
               Join or Create Team
             </button>

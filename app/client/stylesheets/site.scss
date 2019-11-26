@@ -1,12 +1,11 @@
 @import "branding";
 @import "custom";
 
-$font-body: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
-$font-header: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
+$font-body: 'Nunito Sans', sans-serif;
 
 // Login screen variables
 $login-bg-color: $secondary;
-$login-color: $primary;
+$login-color: $yellow-green;
 $register-color: $tertiary;
 
 $status-unverified-color: rgb(82, 82, 82);
@@ -61,7 +60,7 @@ body {
 
 body {
   margin: 0;
-  font-family: "Nunito", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $font-body;
   font-weight: 300;
 
   > .container {
@@ -124,4 +123,27 @@ fieldset {
 .ui.search > .results {
   width: 100%;
 }
+
+.ui.button.primary-cta {
+  background-color: $yellow-green;
+  color: $hbp-navy;
+
+  &:hover {
+    background-color: $yellow-green-hover; 
+  }
+}
+
+.ui.button.secondary-cta {
+  background-color: $hbp-navy;
+  color: $white;
+
+  &:hover {
+    background-color: $darker-hbp-navy;
+  }
+}
+
+.ui.form input[type=checkbox] {
+  vertical-align: middle;
+}
+
 // @import 'animation';

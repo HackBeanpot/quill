@@ -34,7 +34,7 @@
               <div class="field">
                 <button id="login-password"
                         type="submit"
-                        class="fluid ui login button">
+                        class="fluid ui button primary-cta">
                         Login
                 </button>
               </div>
@@ -46,7 +46,7 @@
             <div class="field">
               <button id="register"
                       type="submit"
-                      class="fluid ui register button"
+                      class="fluid ui button secondary-cta"
                       ng-click="register()">
                       Register
               </button>
@@ -67,7 +67,7 @@
               <div class="field">
                 <button id="forgot-password"
                         type="submit"
-                        class="fluid ui login button">
+                        class="fluid ui button primary-cta">
                         Send Reset Email
                 </button>
               </div>
@@ -78,13 +78,13 @@
         <div class="ui divider"></div>
 
         <div ng-show="loginState === 'login'" class="forgot">
-          <a href="#" ng-click="setLoginState('forgot')">
+          <a href="#" class="inline-link" ng-click="setLoginState('forgot')">
             Forgot Password?
           </a>
         </div>
 
         <div ng-show="loginState === 'forgot'" class="forgot">
-          <a href="#" ng-click="setLoginState('login')">
+          <a href="#" class="inline-link" ng-click="setLoginState('login')">
             {{regIsOpen ? 'Login or Register' : 'Login'}}
           </a>
         </div>

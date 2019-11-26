@@ -18,18 +18,16 @@
     opacity: 0.7;
     border-left: 0px solid transparent;
 
-    &.active {
-      background: lighten($sidebar-color, 4%);
+    &.active:not(.logo) {
+      background: lighten($yellow-green-disabled, 4%);
+      color: $hbp-navy;
       opacity: 1;
-      border-left: 8px solid lighten($sidebar-color, 10%);
+      border-left: 8px solid lighten($yellow-green-disabled, 10%);
     }
-    &:hover {
+    &:hover:not(.logo) {
       cursor: pointer;
-      background: darken($sidebar-color, 2%);
-      opacity: 1;
-    }
-    &:active {
-      background: darken($sidebar-color, 5%);
+      color: $hbp-navy;
+      background: darken($yellow-green-disabled, 2%);
       opacity: 1;
     }
 

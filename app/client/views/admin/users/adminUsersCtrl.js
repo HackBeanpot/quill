@@ -244,6 +244,21 @@ angular.module('reg')
       }
 
       function generateSections(user){
+        var techInterests = [];
+        if (user.profile.techInterests) {
+          techInterests = user.profile.techInterests;
+        }
+
+        var heardAboutUs = [];
+        if (user.profile.heardAboutUs) {
+          heardAboutUs = user.profile.heardAboutUs;
+        }
+
+        var hbpOutreachEvents = [];
+        if (user.profile.hbpOutreachEvents) {
+          hbpOutreachEvents = user.profile.hbpOutreachEvents;
+        }
+
         return [
           {
             name: 'Basic Info',
@@ -316,6 +331,15 @@ angular.module('reg')
               },{
                 name: 'Essay',
                 value: user.profile.essay
+              },{
+                name: 'Tech Interests',
+                value: techInterests.join(', ')
+              },{
+                name: 'Hear About Us',
+                value: heardAboutUs.join(', ')
+              },{
+                name: 'HBP Outreach Events',
+                value: hbpOutreachEvents.join(', ')
               }
 
             ]
@@ -334,6 +358,9 @@ angular.module('reg')
               },{
                 name: 'Website',
                 value: user.confirmation.website
+              },{
+                name: 'Twitter',
+                value: user.confirmation.twitter
               }
             ]
           }

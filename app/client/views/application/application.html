@@ -233,15 +233,6 @@
         <br>
 
         <div class="field">
-            <label>Any food restrictions or allergies?</label>
-            <input type="text"
-                   placeholder="Dietary Restrictions"
-                   ng-model="user.profile.dietaryRestrictions">
-        </div>
-  
-        <br>
-
-        <div class="field">
           <label> Are you planning on coming with a team? </label>
           <select
             name="teamPlan"
@@ -253,6 +244,26 @@
           </select>
         </div>
 
+        <br>
+
+        <div class="checkbox-label"> Do you have any dietary restrictions? Check all that apply. </div>
+        <div class="field"
+          ng-repeat="(key, value) in dietaryRestrictions">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="dietaryRestrictions[key]" />
+            <label>{{key}}</label>
+          </div>
+
+        </div>
+
+        <div class="field" ng-show="dietaryRestrictions['Other (please specify)']">
+          <label> Other Dietary Restrictions </label>
+          <input ng-model="user.profile.otherDietaryRestrictions"
+                 type="text">
+          </input>
+        </div>
+  
         <br>
 
         <div class="field">

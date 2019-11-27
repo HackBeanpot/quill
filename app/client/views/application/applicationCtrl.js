@@ -120,6 +120,30 @@ angular.module('reg')
 
       // -------------------------------
 
+      // -------------------------------
+      // All this just for dietary restriction checkboxes fml
+
+      var dietaryRestrictions = {
+        'Vegetarian': false,
+        'Vegan': false,
+        'Halal': false,
+        'Kosher': false,
+        'Nut Allergy': false,
+        'Other (please specify)': false
+      };
+
+      if (user.profile.dietaryRestrictions){
+        user.profile.dietaryRestrictions.forEach(function(restriction){
+          if (restriction in dietaryRestrictions){
+            dietaryRestrictions[restriction] = true;
+          }
+        });
+      }
+
+      $scope.dietaryRestrictions = dietaryRestrictions;
+
+      // -------------------------------
+
       // Populate the school dropdown
       populateSchools();
       _setupForm();
@@ -203,6 +227,15 @@ angular.module('reg')
           }
         });
         profile.hbpOutreachEvents = hoes;
+
+        // Get the dietary restrictions as an array
+        var drs = [];
+        Object.keys($scope.dietaryRestrictions).forEach(function(key){
+          if ($scope.dietaryRestrictions[key]){
+            drs.push(key);
+          }
+        });
+        profile.dietaryRestrictions = drs;
         
 
         UserService

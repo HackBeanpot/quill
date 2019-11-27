@@ -56,6 +56,10 @@ var profile = {
   },
 
   dietaryRestrictions: {
+    type: [String]
+  },
+
+  otherDietaryRestrictions: {
     type: String,
     min: 0,
     max: 300
@@ -65,8 +69,12 @@ var profile = {
     type: [String]
   },
 
+  otherTechInterests: {
+    type: String
+  },
+
   hackerExperience: {
-    type: [String],
+    type: [String]
   },
 
   teamPlan: {
@@ -76,6 +84,10 @@ var profile = {
 
   heardAboutUs: {
     type: [String]
+  },
+
+  otherHeardAboutUs: {
+    type: String
   },
 
   hbpOutreachEvents: {
@@ -150,7 +162,6 @@ var profile = {
 // Only after confirmed
 var confirmation = {
   phoneNumber: String,
-  dietaryRestrictions: [String],
 
   major: String,
   github: String,

@@ -180,6 +180,24 @@
       </div>
 
       <div class="field">
+        <label> Other Tech Interests </label>
+        <input
+          type="text" ng-model="selectedUser.profile.otherTechInterests" />
+      </div>
+
+      <div class="field">
+        <label> Heard About Us </label>
+        <input
+          type="text" ng-model="selectedUser.profile.heardAboutUs" />
+      </div>
+
+      <div class="field">
+        <label> Other Heard ABout us </label>
+        <input
+          type="text" ng-model="selectedUser.profile.otherHeardAboutUs" />
+      </div>
+
+      <div class="field">
         <label> Did you attend any events hosted by HackBeanpot in Fall 2019? </label>
         <input
           type="text" ng-model="selectedUser.profile.hbpOutreachEvents" />
@@ -236,6 +254,13 @@
       </div> 
 
       <div class="field">
+        <label> Dietary Restrictions </label>
+        <input
+          type="text" ng-model="selectedUser.profile.dietaryRestrictions" />
+      </div>
+
+
+      <div class="field">
         <div
           ng-click="updateProfile()"
           class="ui positive right labeled icon button">
@@ -260,12 +285,6 @@
       <div class="field">
         <label> Phone </label>
         <input type="tel" ng-model="selectedUser.confirmation.phoneNumber" />
-      </div>
-
-      <div class="field">
-        <label> Dietary Restrictions </label>
-        <input
-          type="text" ng-model="selectedUser.confirmation.dietaryRestrictions" />
       </div>
 
       <div class="field">

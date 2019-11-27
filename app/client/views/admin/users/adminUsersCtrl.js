@@ -19,13 +19,13 @@ angular.module('reg')
       $('.ui.dimmer').remove();
       // Populate the size of the modal for when it appears, with an arbitrary user.
       $scope.selectedUser = {};
-      $scope.selectedUser.sections = generateSections({status: '', confirmation: {
-        dietaryRestrictions: []
-      }, profile: {
+      $scope.selectedUser.sections = generateSections({status: '', confirmation: '',
+       profile: {
         techInterests: [],
         hackerExperience: [],
         heardAboutUs: [],
         hbpOutreachEvents: [],
+        dietaryRestrictions: []
       }});
 
       function updatePage(data){
@@ -314,7 +314,7 @@ angular.module('reg')
                 value: user.profile.topicsTechnologies
               },{
                 name: 'Dietary Restrictions',
-                value: user.profile.dietaryRestrictions
+                value: user.profile.dietaryRestrictions.join(', ')
               },{
                 name: 'Shirt Size',
                 value: user.profile.shirtSize
@@ -325,8 +325,14 @@ angular.module('reg')
                 name: 'Tech Interests',
                 value: user.profile.techInterests.join(', ')
               },{
+                name: 'Other Tech Interests',
+                value: user.profile.otherTechInterests
+              },              {
                 name: 'Hear About Us',
                 value: user.profile.heardAboutUs.join(', ')
+              },{
+                name: 'Other Heard About Us',
+                value: user.profile.otherHeardAboutUs
               },{
                 name: 'HBP Outreach Events',
                 value: user.profile.hbpOutreachEvents.join(', ')
@@ -347,9 +353,6 @@ angular.module('reg')
               {
                 name: 'Phone Number',
                 value: user.confirmation.phoneNumber
-              },{
-                name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions.join(', ')
               },{
                 name: 'Github',
                 value: user.confirmation.github

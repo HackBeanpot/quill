@@ -316,6 +316,9 @@ angular.module('reg')
                 name: 'Dietary Restrictions',
                 value: user.profile.dietaryRestrictions.join(', ')
               },{
+                name: 'Other Dietary Restrictions',
+                value: user.profile.otherDietaryRestrictions
+              },{
                 name: 'Shirt Size',
                 value: user.profile.shirtSize
               },{
@@ -362,6 +365,15 @@ angular.module('reg')
               },{
                 name: 'Twitter',
                 value: user.confirmation.twitter
+              },{
+                name: 'Liability',
+                value: user.confirmation.signatureLiability
+              },{
+                name: 'Photo Release',
+                value: user.confirmation.signaturePhotoRelease
+              },{
+                name: 'Code of Conduct',
+                value: user.confirmation.signatureCodeOfConduct
               }
             ]
           }

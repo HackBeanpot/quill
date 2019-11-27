@@ -192,7 +192,7 @@
       </div>
 
       <div class="field">
-        <label> Other Heard ABout us </label>
+        <label> Other Heard About us </label>
         <input
           type="text" ng-model="selectedUser.profile.otherHeardAboutUs" />
       </div>
@@ -313,11 +313,37 @@
       </div>
 
       <div class="field">
-        <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+        <label> Liability Waiver </label>
         <input type="text"
-               placeholder="Your Resume"
-               ng-model="selectedUser.profile.resume">    
+               name="signatureLiabilityWaiver"
+               placeholder="Your Full Legal Name"
+               ng-model="selectedUser.confirmation.signatureLiability">
       </div>
+
+      <div class="field">
+        <label> Photo Release </label>
+        <input type="text"
+               name="signaturePhotoRelease"
+               placeholder="Your Full Legal Name"
+               ng-model="selectedUser.confirmation.signaturePhotoRelease">
+      </div>
+
+      <div class="field">
+        <label> Code of Conduct </label>
+        <input type="text"
+               name="signatureCodeOfConduct"
+               placeholder="Your Full Legal Name"
+               ng-model="selectedUser.confirmation.signatureCodeOfConduct">
+      </div>
+
+      <div class="field">
+        <label>
+          Additional Notes
+        </label>
+        <textarea
+          ng-model="selectedUser.confirmation.notes"></textarea>
+      </div>
+
       
     </fieldset>
 

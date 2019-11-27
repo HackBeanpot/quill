@@ -5,15 +5,18 @@
 
   <div class="ui stackable page grid">
     <div class="column">
+      
       <div class="ui form"
             ng-class="{'loading': loading}">
+
+        <p class="application-description"> Questions marked with <span class="required">*</span> are required. After you submit your application, you can come back and edit it anytime. </p>
 
         <div class="divided title">Get to know you!</div>
 
         <fieldset ng-disabled="regIsClosed">
 
         <div class="field">
-          <label> Email </label>
+          <label> Email <span class="required">*</span></label>
           <input type="email"
                  name="email"
                  disabled="disabled"
@@ -21,15 +24,15 @@
         </div>
 
         <div class="field">
-          <label> Full Name </label>
-          <input type="text"i
+          <label> Full Name <span class="required">*</span> </label>
+          <input type="text"
                  name="name"
                  placeholder="Name"
                  ng-model="user.profile.name">
         </div>
 
         <div class="field" ng-show="autoFilledSchool">
-          <label> School </label>
+          <label> School <span class="required">*</span> </label>
           <input class="ui input"
                  disabled="disabled"
                  ng-show="autoFilledSchool"
@@ -37,7 +40,7 @@
         </div>
 
         <div class="field" ng-show="!autoFilledSchool">
-          <label> School </label>
+          <label> School <span class="required">*</span> </label>
           <div id="school" class="ui search">
             <div class="ui input">
               <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
@@ -47,7 +50,7 @@
         </div>
 
         <div class="field">
-          <label>Year</label>
+          <label>Year <span class="required">*</span></label>
           <select
             name="year"
             ng-model="user.profile.year">
@@ -90,7 +93,7 @@
         </div>
 
         <div class="field">
-          <label>Major</label>
+          <label>Major <span class="required">*</span></label>
           <input type="text"
                  placeholder="Major"
                  ng-model="user.profile.major">
@@ -104,14 +107,14 @@
         </div>
 
         <div class="field">
-          <label>What's your favorite hype song?</label>
+          <label>What's your favorite hype song? <span class="required">*</span></label>
           <input type="text"
                  placeholder="Hype"
                  ng-model="user.profile.hypesong">
         </div>
 
         <div class="field">
-          <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;))</label>
+          <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;)) <span class="required">*</span></label>
           <input type="text"
                  placeholder="The correct answer is hack flavored... just kidding."
                  ng-model="user.profile.jellybean">
@@ -143,7 +146,7 @@
         <br>
 
         <div class="field">
-          <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
+          <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech. <span class="required">*</span></label>
           <textarea ng-model="user.profile.background">
           </textarea>
         </div>
@@ -214,7 +217,7 @@
         <br>
 
         <div class="field">
-            <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.)</label>
+            <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.) <span class="required">*</span></label>
             <input type="text"
                    placeholder="Activities"
                    ng-model="user.profile.activities">
@@ -224,7 +227,7 @@
 
         <div class="field">
             <label>
-              What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission)
+              What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission) <span class="required">*</span>
             </label>
             <textarea placeholder="Ideas or topics" ng-model="user.profile.topicsTechnologies">
             </textarea>
@@ -242,13 +245,13 @@
         <br>
 
         <div class="field">
-          <label> Are you planning on coming with a team? </label>
+          <label> Are you planning on coming with a team?  <span class="required">*</span> </label>
           <select
             name="teamPlan"
             ng-model="user.profile.teamPlan">
             <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
             <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
-            <option value="I want to join a new team at the event">I want to join a new team at the event</option>
+            <option value="I want to join a new team at the event">I want to join a new team at the event.</option>
             <option value="I want to work solo">I want to work solo.</option>
           </select>
         </div>
@@ -256,7 +259,7 @@
         <br>
 
         <div class="field">
-          <label> S.W.A.G. - Shirts We All Got. Shirt size? </label>
+          <label> S.W.A.G. - Shirts We All Got. Shirt size? <span class="required">*</span> </label>
           <select
             name="shirt"
             ng-model="user.profile.shirtSize"
@@ -276,6 +279,7 @@
         <div class="field">
           <label>
             Our theme is “Sprout” this year, which represents growth in new skills, relationships, and experiences. With this in mind, what are you hoping to get out of HackBeanpot? What do you want to walk away having learned or experienced?
+            <span class="required">*</span>
           </label>
           <textarea ng-model="user.profile.essay">
           </textarea>

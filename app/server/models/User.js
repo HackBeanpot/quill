@@ -408,8 +408,19 @@ schema.statics.validateProfile = function(profile, cb) {
     !(
       profile.name.length > 0 &&
       profile.school.length > 0 &&
+      profile.major.length > 0 &&
       ["H", "1", "2", "3", "4", "5", "G"].indexOf(profile.year) > -1 &&
-      ["M", "F", "O", "N"].indexOf(profile.gender) > -1
+      profile.hypesong.length > 0 &&
+      profile.jellybean.length > 0 &&
+      profile.background.length > 0 &&
+      profile.activities.length > 0 &&
+      profile.topicsTechnologies.length > 0 &&
+      profile.essay.length > 0 &&
+      ["XS", "S", "M", "L", "XL", "XXL"].indexOf(profile.shirtSize) > -1 &&
+      ['I have a team that I plan to come and work with',
+       'I have a team in mind but would be open to finding a new team at the event', 
+       'I want to join a new team at the event', 'I want to work solo'].indexOf(profile.teamPlan) > -1 
+
     )
   );
 };

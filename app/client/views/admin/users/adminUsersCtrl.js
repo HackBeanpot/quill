@@ -357,6 +357,9 @@ angular.module('reg')
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
+                name: 'Other Dietary Restrictions',
+                value: user.confirmation.otherDietaryRestrictions
+              },{
                 name: 'Github',
                 value: user.confirmation.github
               },{

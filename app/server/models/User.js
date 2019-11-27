@@ -163,6 +163,7 @@ var profile = {
 var confirmation = {
   phoneNumber: String,
   dietaryRestrictions: [String],
+  otherDietaryRestrictions: String,
 
   github: String,
   twitter: String,

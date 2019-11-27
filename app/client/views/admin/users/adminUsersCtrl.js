@@ -365,6 +365,18 @@ angular.module('reg')
               },{
                 name: 'Twitter',
                 value: user.confirmation.twitter
+              },{
+                name: 'Liability',
+                value: user.confirmation.signatureLiability
+              },{
+                name: 'Photo Release',
+                value: user.confirmation.signaturePhotoRelease
+              },{
+                name: 'Code of Conduct',
+                value: user.confirmation.signatureCodeOfConduct
+              },{
+                name: 'Notes',
+                value: user.confirmation.notes
               }
             ]
           }

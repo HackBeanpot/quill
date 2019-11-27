@@ -21,7 +21,12 @@ angular.module('reg')
       $scope.selectedUser = {};
       $scope.selectedUser.sections = generateSections({status: '', confirmation: {
         dietaryRestrictions: []
-      }, profile: ''});
+      }, profile: {
+        techInterests: [],
+        hackerExperience: [],
+        heardAboutUs: [],
+        hbpOutreachEvents: [],
+      }});
 
       function updatePage(data){
         $scope.users = data.users;
@@ -244,26 +249,6 @@ angular.module('reg')
       }
 
       function generateSections(user){
-        var techInterests = [];
-        if (user.profile.techInterests) {
-          techInterests = user.profile.techInterests;
-        }
-
-        var heardAboutUs = [];
-        if (user.profile.heardAboutUs) {
-          heardAboutUs = user.profile.heardAboutUs;
-        }
-
-        var hbpOutreachEvents = [];
-        if (user.profile.hbpOutreachEvents) {
-          hbpOutreachEvents = user.profile.hbpOutreachEvents;
-        }
-
-        var hackerExperience = [];
-        if (user.profile.hackerExperience) {
-          hackerExperience = user.profile.hackerExperience;
-        }
-
         return [
           {
             name: 'Basic Info',
@@ -338,25 +323,22 @@ angular.module('reg')
                 value: user.profile.essay
               },{
                 name: 'Tech Interests',
-                value: techInterests.join(', ')
+                value: user.profile.techInterests.join(', ')
               },{
                 name: 'Hear About Us',
-                value: heardAboutUs.join(', ')
+                value: user.profile.heardAboutUs.join(', ')
               },{
                 name: 'HBP Outreach Events',
-                value: hbpOutreachEvents.join(', ')
+                value: user.profile.hbpOutreachEvents.join(', ')
               },{
                 name: 'Hacker Experience',
-                value: hackerExperience.join(', ')
+                value: user.profile.hackerExperience.join(', ')
               },{
                 name: 'What is their plan for a team?',
                 value: user.profile.teamPlan
               },{
                 name: 'Resume',
                 value: user.profile.resume
-              },{
-                name: 'Shirt Size',
-                value: user.profile.shirtSize
               }
             ]
           },{

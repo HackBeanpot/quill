@@ -83,7 +83,8 @@ angular.module('reg')
         'Instagram': false,
         'Outreach Event': false,
         'Our Website': false,
-        'Blog Post': false
+        'Blog Post': false,
+        'Other': false
       };
 
       if (user.profile.heardAboutUs){

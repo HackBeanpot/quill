@@ -158,7 +158,14 @@
             <input type="checkbox" ng-model="techInterests[key]" />
             <label>{{key}}</label>
           </div>
+        </div>
 
+        <div class="field" ng-show="techInterests['Other']">
+          <label>Other Tech Interests </label>
+          <input ng-model="user.profile.otherTechInterests"
+                 type="text" 
+                 placeholder="Programming Languages, etc.">
+          </input>
         </div>
         
         <br>
@@ -182,7 +189,13 @@
             <input type="checkbox" ng-model="heardAboutUs[key]" />
             <label>{{key}}</label>
           </div>
+        </div>
 
+        <div class="field" ng-show="heardAboutUs['Other']">
+          <label>How else did you hear about us? </label>
+          <input ng-model="user.profile.otherHeardAboutUs"
+                 type="text">
+          </input>
         </div>
 
         <br>

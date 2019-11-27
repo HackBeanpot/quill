@@ -419,7 +419,10 @@ schema.statics.validateProfile = function(profile, cb) {
       ["XS", "S", "M", "L", "XL", "XXL"].indexOf(profile.shirtSize) > -1 &&
       ['I have a team that I plan to come and work with',
        'I have a team in mind but would be open to finding a new team at the event', 
-       'I want to join a new team at the event', 'I want to work solo'].indexOf(profile.teamPlan) > -1 
+       'I want to join a new team at the event', 'I want to work solo'].indexOf(profile.teamPlan) > -1 &&
+      profile.heardAboutUs.length > 0 &&
+      profile.techInterests.length > 0 &&
+      profile.hackerExperience.length > 0
 
     )
   );

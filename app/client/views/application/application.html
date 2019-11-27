@@ -165,11 +165,10 @@
         <br>
 
         <div class="field">
-            <label>Resume Upload (optional)</label>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-              Get. dat. internship. This is not for us to look at! We will simply pass your resume on to our sponsors.
-              <input type="file" name="fileToUpload" id="fileToUpload">
-            </form>     
+            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+            <input type="text"
+                   placeholder="Your Resume"
+                   ng-model="user.profile.resume">    
         </div>
   
         <br>

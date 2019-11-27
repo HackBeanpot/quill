@@ -346,6 +346,9 @@ angular.module('reg')
               },{
                 name: 'What is their plan for a team?',
                 value: user.profile.teamPlan
+              },{
+                name: 'Resume',
+                value: user.profile.resume
               }
             ]
           },{

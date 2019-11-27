@@ -274,17 +274,19 @@
 
       <div class="field">
         <label> Github </label>
-        <input type="url" ng-model="selectedUser.profile.github" />
+        <input type="url" ng-model="selectedUser.confirmation.github" />
       </div>
 
       <div class="field">
         <label> Website </label>
-        <input type="url" ng-model="selectedUser.profile.website" />
+        <input type="url" ng-model="selectedUser.confirmation.website" />
       </div>
 
       <div class="field">
-        <label> Resume </label>
-        <input type="url" ng-model="selectedUser.profile.resume" />
+        <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+        <input type="text"
+               placeholder="Your Resume"
+               ng-model="selectedUser.profile.resume">    
       </div>
       
     </fieldset>

@@ -134,6 +134,12 @@ var profile = {
     type: String,
     min: 0,
     max: 1500
+  },
+
+  resume: {
+    type: String,
+    min: 0,
+    max: 1500
   }
 };
 
@@ -152,7 +158,6 @@ var confirmation = {
   github: String,
   twitter: String,
   website: String,
-  resume: String,
 
   needsReimbursement: Boolean,
   address: {

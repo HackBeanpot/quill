@@ -19,9 +19,14 @@ angular.module('reg')
       $('.ui.dimmer').remove();
       // Populate the size of the modal for when it appears, with an arbitrary user.
       $scope.selectedUser = {};
-      $scope.selectedUser.sections = generateSections({status: '', confirmation: {
+      $scope.selectedUser.sections = generateSections({status: '', confirmation: '',
+       profile: {
+        techInterests: [],
+        hackerExperience: [],
+        heardAboutUs: [],
+        hbpOutreachEvents: [],
         dietaryRestrictions: []
-      }, profile: ''});
+      }});
 
       function updatePage(data){
         $scope.users = data.users;
@@ -290,20 +295,17 @@ angular.module('reg')
                 name: 'Minor',
                 value: user.profile.minor
               },{
+                name: 'Hype Song',
+                value: user.profile.hypesong
+              },{
+                name: 'Jellybean Flavor',
+                value: user.profile.jellybean
+              },{
                 name: 'Graduation Year',
-                value: user.profile.graduationYear
+                value: user.profile.year
               },{
-                name: 'Description',
-                value: user.profile.description
-              },{
-                name: 'Essay',
-                value: user.profile.essay
-              },{
-                name: 'Superpower',
-                value: user.profile.superpower
-              },{
-                name: 'Animal',
-                value: user.profile.animal
+                name: 'Background',
+                value: user.profile.background
               },{
                 name: 'Activities',
                 value: user.profile.activities
@@ -311,10 +313,42 @@ angular.module('reg')
                 name: 'Topics and Technologies',
                 value: user.profile.topicsTechnologies
               },{
-                name: 'Background',
-                value: user.profile.background
+                name: 'Dietary Restrictions',
+                value: user.profile.dietaryRestrictions.join(', ')
+              },{
+                name: 'Other Dietary Restrictions',
+                value: user.profile.otherDietaryRestrictions
+              },{
+                name: 'Shirt Size',
+                value: user.profile.shirtSize
+              },{
+                name: 'Essay',
+                value: user.profile.essay
+              },{
+                name: 'Tech Interests',
+                value: user.profile.techInterests.join(', ')
+              },{
+                name: 'Other Tech Interests',
+                value: user.profile.otherTechInterests
+              },              {
+                name: 'Hear About Us',
+                value: user.profile.heardAboutUs.join(', ')
+              },{
+                name: 'Other Heard About Us',
+                value: user.profile.otherHeardAboutUs
+              },{
+                name: 'HBP Outreach Events',
+                value: user.profile.hbpOutreachEvents.join(', ')
+              },{
+                name: 'Hacker Experience',
+                value: user.profile.hackerExperience.join(', ')
+              },{
+                name: 'What is their plan for a team?',
+                value: user.profile.teamPlan
+              },{
+                name: 'Resume',
+                value: user.profile.resume
               }
-
             ]
           },{
             name: 'Confirmation',
@@ -323,20 +357,23 @@ angular.module('reg')
                 name: 'Phone Number',
                 value: user.confirmation.phoneNumber
               },{
-                name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions.join(', ')
-              },{
-                name: 'Shirt Size',
-                value: user.confirmation.shirtSize
-              },{
-                name: 'Major',
-                value: user.confirmation.major
-              },{
                 name: 'Github',
                 value: user.confirmation.github
               },{
                 name: 'Website',
                 value: user.confirmation.website
+              },{
+                name: 'Twitter',
+                value: user.confirmation.twitter
+              },{
+                name: 'Liability',
+                value: user.confirmation.signatureLiability
+              },{
+                name: 'Photo Release',
+                value: user.confirmation.signaturePhotoRelease
+              },{
+                name: 'Code of Conduct',
+                value: user.confirmation.signatureCodeOfConduct
               }
             ]
           }

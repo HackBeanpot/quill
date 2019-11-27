@@ -97,10 +97,24 @@
         </div>
         
         <div class="field">
-          <label>Minor</label>
+          <label>Minor(s), if any</label>
           <input type="text"
                  placeholder="Minor"
                  ng-model="user.profile.minor">
+        </div>
+
+        <div class="field">
+          <label>What's your favorite hype song?</label>
+          <input type="text"
+                 placeholder="Hype"
+                 ng-model="user.profile.hypesong">
+        </div>
+
+        <div class="field">
+          <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;))</label>
+          <input type="text"
+                 placeholder="The correct answer is hack flavored... just kidding."
+                 ng-model="user.profile.jellybean">
         </div>
 
         <br>
@@ -112,70 +126,95 @@
               Let us know what you’re interested in! Don’t be shy. If you’ve been looking for the opportunity to gain some experience, HackBeanpot is the perfect place to explore and learn something new!
           </p>
         </div>
-        
+
         <br>
-        
-        <div class="field">
-            <label>Tech Interests</label>
-            <input type="checkbox" name="interest" value="Hardware">  Hardware<br>
-            <input type="checkbox" name="interest" value="Web Development">  Web Development<br>
-            <input type="checkbox" name="interest" value="Mobile App Development">  Mobile App Development<br>
-            <input type="checkbox" name="interest" value="AI/Machine Learning">  AI/Machine Learning<br>
-            <input type="checkbox" name="interest" value="Data Analytics">  Data Analytics<br>
-            <input type="checkbox" name="interest" value="AR/VR">  AR/VR<br>
-            <input type="checkbox" name="interest" value="Natural Language Processing">  Natural Language Processing<br>
-            <input type="checkbox" name="interest" value="UI/UX Design">  UI/UX Design<br>
-            <input type="checkbox" name="interest" value="Project Management">  Project Management<br>            
+
+        <div class="checkbox-label"> What is your experience with Hackathons? </div>
+        <div class="field"
+          ng-repeat="(key, value) in hackerExperience">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="hackerExperience[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
         
         <br>
 
         <div class="field">
-          <label>What’s your background? Are you a chemical engineer? A web developer? An entrepreneur? A marketing specialist? An artist? A biologist? Or just a curious mind?</label>
-          <input type="text"
-                 placeholder="Give us a snapshot of your skillset!"
-                 ng-model="user.profile.background">
+          <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
+          <textarea ng-model="user.profile.background">
+          </textarea>
         </div>
 
         <br>
 
-        <div class="field">
-            <label>Hacking Experience</label>
-            <input type="checkbox" name="interest" value="This will be my first time at a hackathon">  This will be my first time at a hackathon<br>
-            <input type="checkbox" name="interest" value="I have been to one or more hackathons before">  I have been to one or more hackathons before<br>
-            <input type="checkbox" name="interest" value="I have been to HackBeanpot before">  I have been to HackBeanpot before<br>
-            <input type="checkbox" name="interest" value="I would be interested in a first time hacker orientation">  I would be interested in a first time hacker orientation<br>         
+        <div class="checkbox-label"> Tech Interests </div>
+        <div class="field"
+          ng-repeat="(key, value) in techInterests">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="techInterests[key]" />
+            <label>{{key}}</label>
+          </div>
+        </div>
+
+        <div class="field" ng-show="techInterests['Other']">
+          <label>Other Tech Interests </label>
+          <input ng-model="user.profile.otherTechInterests"
+                 type="text" 
+                 placeholder="Programming Languages, etc.">
+          </input>
         </div>
         
         <br>
 
         <div class="field">
-            <label>Resume Upload (optional)</label>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-              Get. dat. internship. This is not for us to look at! We will simply pass your resume on to our sponsors.
-              <input type="file" name="fileToUpload" id="fileToUpload">
-            </form>     
+            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+            <input type="text"
+                   placeholder="Your Resume"
+                   ng-model="user.profile.resume">    
         </div>
   
         <br>
 
-        <div class="divided title">Some Final Questions</div>
+        <div class="divided title">HackBeanpot-Related Things</div>
 
-        <div class="field">
-            <label>How did you find us?</label>
-            <input type="checkbox" name="interest" value="Friends">  Friends<br>
-            <input type="checkbox" name="interest" value="Facebook">  Facebook<br>
-            <input type="checkbox" name="interest" value="Twitter">  Twitter<br>
-            <input type="checkbox" name="interest" value="Instagram">  Instagram<br>
-            <input type="checkbox" name="interest" value="Outreach Event">  Outreach Event<br>
-            <input type="checkbox" name="interest" value="Our Website">  Our Website<br>
-            <input type="checkbox" name="interest" value="Blog Post">  Blog Post<br>
+        <div class="checkbox-label"> How did you hear about us? </div>
+        <div class="field"
+          ng-repeat="(key, value) in heardAboutUs">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="heardAboutUs[key]" />
+            <label>{{key}}</label>
+          </div>
+        </div>
+
+        <div class="field" ng-show="heardAboutUs['Other']">
+          <label>How else did you hear about us? </label>
+          <input ng-model="user.profile.otherHeardAboutUs"
+                 type="text">
+          </input>
+        </div>
+
+        <br>
+
+        <div class="checkbox-label"> Did you attend any events hosted by HackBeanpot in Fall 2019? Check all that apply. </div>
+        <div class="field"
+          ng-repeat="(key, value) in hbpOutreachEvents">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="hbpOutreachEvents[key]" />
+            <label>{{key}}</label>
+          </div>
+
         </div>
 
         <br>
 
         <div class="field">
-            <label>What’s a hackathon without doing random things at random times? List some activities you would like to participate in: (i.e. yoga, coding challenges,  minute to win it games)</label>
+            <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.)</label>
             <input type="text"
                    placeholder="Activities"
                    ng-model="user.profile.activities">
@@ -185,74 +224,91 @@
 
         <div class="field">
             <label>
-                Are there any specific topics/technologies you'd be interested in attending a talk or workshop about? (i.e. React, team-building, UI/UX, career development)
+              What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission)
             </label>
-            <textarea ng-model="user.profile.topicsTechnologies">
+            <textarea placeholder="Ideas or topics" ng-model="user.profile.topicsTechnologies">
             </textarea>
         </div>
 
         <br>
 
         <div class="field">
-            <label>Any food restrictions or allergies?</label>
-            <input type="text"
-                   placeholder="Dietary Restrictions"
-                   ng-model="user.profile.dietaryRestrictions">
+          <label> Are you planning on coming with a team? </label>
+          <select
+            name="teamPlan"
+            ng-model="user.profile.teamPlan">
+            <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
+            <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
+            <option value="I want to join a new team at the event">I want to join a new team at the event</option>
+            <option value="I want to work solo">I want to work solo.</option>
+          </select>
+        </div>
+
+        <br>
+
+        <div class="checkbox-label"> Do you have any dietary restrictions? Check all that apply. </div>
+        <div class="field"
+          ng-repeat="(key, value) in dietaryRestrictions">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="dietaryRestrictions[key]" />
+            <label>{{key}}</label>
+          </div>
+
+        </div>
+
+        <div class="field" ng-show="dietaryRestrictions['Other (please specify)']">
+          <label> Other Dietary Restrictions </label>
+          <input ng-model="user.profile.otherDietaryRestrictions"
+                 type="text">
+          </input>
         </div>
   
         <br>
 
         <div class="field">
-            <label>Forming your winning team - Please select the option most relevant to you</label>
-            <input type="radio" name="interest" value="I have a team that I plan to come and work with">  I have a team that I plan to come and work with<br>
-            <input type="radio" name="interest" value="I have a team in mind but would be open to finding a new team at the event">  I have a team in mind but would be open to finding a new team at the event<br>
-            <input type="radio" name="interest" value="I want to join a new team at the event">  I want to join a new team at the event<br>
-            <input type="radio" name="interest" value="I want to work solo">  I want to work solo<br>
-            <label>If you have a team in mind please fill out the team information on your dashboard</label>
+          <label> S.W.A.G. - Shirts We All Got. Shirt size? </label>
+          <select
+            name="shirt"
+            ng-model="user.profile.shirtSize"
+            required>
+            <option value=""></option>
+            <option value="XS">Unisex X-Small</option>
+            <option value="S">Unisex Small</option>
+            <option value="M">Unisex Medium</option>
+            <option value="L">Unisex Large</option>
+            <option value="XL">Unisex X-Large</option>
+            <option value="XXL">Unisex XX-Large</option>
+          </select>
         </div>
         
         <br>
 
         <div class="field">
-            <label>
-                What are you hoping to get out of HackBeanpot? Let us know what you're excited to learn about, work on, or see at the event!
-            </label>
-            <textarea ng-model="user.profile.essay">
-            </textarea>
-          </div>
-
-          <div class="field">
-            <label>If you could have any superpower what would it be?</label>
-            <input type="text"
-                   placeholder="Superpower"
-                   ng-model="user.profile.superpower">
-          </div>
-
-          <br>
-
-          <div class="field">
-              <label>Finally, anything else you want us to know about you?</label>
-              <input type="text"
-                     placeholder="If not, what’s your favorite animal?"
-                     ng-model="user.profile.animal">
-          </div>
-
-        <br>
+          <label>
+            Our theme is “Sprout” this year, which represents growth in new skills, relationships, and experiences. With this in mind, what are you hoping to get out of HackBeanpot? What do you want to walk away having learned or experienced?
+          </label>
+          <textarea ng-model="user.profile.essay">
+          </textarea>
+        </div>
 
         <div class="thank you">
           <p>
-              Thanks for your interest! We can’t wait to learn about you! We will let you know by the week of January 17, 2020 if you've been accepted or if you’ll be on our waitlist. Stay tuned! 
+              Thank you for your interest - we can’t wait to learn about you! Our team will let you know by the week of January 17, 2020 if you've been accepted or if you’ll be on our waitlist. Stay tuned!
           </p>
           <p>
-              If you have any questions in the meantime, feel free to reach out to us at
-               <a href="mailto:team@hackbeanpot.com" class="inline-link" title="Email us!"> team@hackbeanpot.com</a>,
-                and visit our website 
-                <a href="https://hackbeanpot.com" class="inline-link" title="Our website!"> https://hackbeanpot.com</a>.
-                Check us out on Instagram
-                 <a class="inline-link" href="https://www.instagram.com/hackbeanpot/" title="Our Instagram!"> @hackbeanpot </a>
-                  or on Twitter <a class="inline-link" href="https://twitter.com/HackBeanpot" title="Our Twitter!"> @HackBeanpot </a> to stay up to date with the latest HackBeanpot news!
+            If you have any questions in the meantime, feel free to reach out to us at 
+            <a href="mailto:team@hackbeanpot.com" target="_blank" class="inline-link" title="Email us!"> team@hackbeanpot.com</a>
+            and visit our website 
+            <a href="https://hackbeanpot.com" target="_blank" class="inline-link" title="Our website!"> https://hackbeanpot.com</a>.
+            Follow us on social media 
+            (<a href="https://www.instagram.com/hackbeanpot" title="Our Instagram!" target="_blank" class="inline-link">@hackbeanpot</a>)
+            or sign up for our 
+            <a href="http://eepurl.com/gCU4x1" target="_blank" title="Join our newsletter!" class="inline-link"> newsletter </a> 
+            for more information and updates!
+           
           </p>
-          <p> You can also sign up for our newsletter <a href="http://eepurl.com/gCU4x1" title="Join our newsletter!" class="inline-link"> here</a> for even more information! </p>
+          
         </div>
 
         <br>

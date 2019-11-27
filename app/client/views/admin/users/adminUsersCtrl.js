@@ -244,6 +244,26 @@ angular.module('reg')
       }
 
       function generateSections(user){
+        var techInterests = [];
+        if (user.profile.techInterests) {
+          techInterests = user.profile.techInterests;
+        }
+
+        var heardAboutUs = [];
+        if (user.profile.heardAboutUs) {
+          heardAboutUs = user.profile.heardAboutUs;
+        }
+
+        var hbpOutreachEvents = [];
+        if (user.profile.hbpOutreachEvents) {
+          hbpOutreachEvents = user.profile.hbpOutreachEvents;
+        }
+
+        var hackerExperience = [];
+        if (user.profile.hackerExperience) {
+          hackerExperience = user.profile.hackerExperience;
+        }
+
         return [
           {
             name: 'Basic Info',
@@ -290,20 +310,17 @@ angular.module('reg')
                 name: 'Minor',
                 value: user.profile.minor
               },{
+                name: 'Hype Song',
+                value: user.profile.hypesong
+              },{
+                name: 'Jellybean Flavor',
+                value: user.profile.jellybean
+              },{
                 name: 'Graduation Year',
-                value: user.profile.graduationYear
+                value: user.profile.year
               },{
-                name: 'Description',
-                value: user.profile.description
-              },{
-                name: 'Essay',
-                value: user.profile.essay
-              },{
-                name: 'Superpower',
-                value: user.profile.superpower
-              },{
-                name: 'Animal',
-                value: user.profile.animal
+                name: 'Background',
+                value: user.profile.background
               },{
                 name: 'Activities',
                 value: user.profile.activities
@@ -311,10 +328,36 @@ angular.module('reg')
                 name: 'Topics and Technologies',
                 value: user.profile.topicsTechnologies
               },{
-                name: 'Background',
-                value: user.profile.background
+                name: 'Dietary Restrictions',
+                value: user.profile.dietaryRestrictions
+              },{
+                name: 'Shirt Size',
+                value: user.profile.shirtSize
+              },{
+                name: 'Essay',
+                value: user.profile.essay
+              },{
+                name: 'Tech Interests',
+                value: techInterests.join(', ')
+              },{
+                name: 'Hear About Us',
+                value: heardAboutUs.join(', ')
+              },{
+                name: 'HBP Outreach Events',
+                value: hbpOutreachEvents.join(', ')
+              },{
+                name: 'Hacker Experience',
+                value: hackerExperience.join(', ')
+              },{
+                name: 'What is their plan for a team?',
+                value: user.profile.teamPlan
+              },{
+                name: 'Resume',
+                value: user.profile.resume
+              },{
+                name: 'Shirt Size',
+                value: user.profile.shirtSize
               }
-
             ]
           },{
             name: 'Confirmation',
@@ -326,79 +369,14 @@ angular.module('reg')
                 name: 'Dietary Restrictions',
                 value: user.confirmation.dietaryRestrictions.join(', ')
               },{
-                name: 'Shirt Size',
-                value: user.confirmation.shirtSize
-              },{
-                name: 'Major',
-                value: user.confirmation.major
-              },{
                 name: 'Github',
                 value: user.confirmation.github
               },{
                 name: 'Website',
                 value: user.confirmation.website
               },{
-                name: 'Needs Hardware',
-                value: user.confirmation.wantsHardware,
-                type: 'boolean'
-              },{
-                name: 'Hardware Requested',
-                value: user.confirmation.hardware
-              }
-            ]
-          },{
-            name: 'Hosting',
-            fields: [
-              {
-                name: 'Needs Hosting Friday',
-                value: user.confirmation.hostNeededFri,
-                type: 'boolean'
-              },{
-                name: 'Needs Hosting Saturday',
-                value: user.confirmation.hostNeededSat,
-                type: 'boolean'
-              },{
-                name: 'Gender Neutral',
-                value: user.confirmation.genderNeutral,
-                type: 'boolean'
-              },{
-                name: 'Cat Friendly',
-                value: user.confirmation.catFriendly,
-                type: 'boolean'
-              },{
-                name: 'Smoking Friendly',
-                value: user.confirmation.smokingFriendly,
-                type: 'boolean'
-              },{
-                name: 'Hosting Notes',
-                value: user.confirmation.hostNotes
-              }
-            ]
-          },{
-            name: 'Travel',
-            fields: [
-              {
-                name: 'Needs Reimbursement',
-                value: user.confirmation.needsReimbursement,
-                type: 'boolean'
-              },{
-                name: 'Received Reimbursement',
-                value: user.confirmation.needsReimbursement && user.status.reimbursementGiven
-              },{
-                name: 'Address',
-                value: user.confirmation.address ? [
-                  user.confirmation.address.line1,
-                  user.confirmation.address.line2,
-                  user.confirmation.address.city,
-                  ',',
-                  user.confirmation.address.state,
-                  user.confirmation.address.zip,
-                  ',',
-                  user.confirmation.address.country,
-                ].join(' ') : ''
-              },{
-                name: 'Additional Notes',
-                value: user.confirmation.notes
+                name: 'Twitter',
+                value: user.confirmation.twitter
               }
             ]
           }

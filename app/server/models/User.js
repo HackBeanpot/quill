@@ -27,7 +27,7 @@ var profile = {
   year: {
     type: String,
     enum: {
-      values: "H 1 2 3 4 5 G".split(" ")
+      values: ["H", "1", "2", "3", "4", "5", "G"]
     }
   },
 
@@ -61,19 +61,34 @@ var profile = {
     max: 300
   },
 
-  interests: {
+  techInterests: {
+    type: [String]
+  },
+
+  hackerExperience: {
+    type: [String],
+  },
+
+  teamPlan: {
+    type: String,
+    enum: ['I have a team that I plan to come and work with', 'I have a team in mind but would be open to finding a new team at the event', 'I want to join a new team at the event', 'I want to work solo']
+  },
+
+  heardAboutUs: {
+    type: [String]
+  },
+
+  hbpOutreachEvents: {
+    type: [String]
+  },
+
+  hypesong: {
     type: String,
     min: 0,
     max: 300
   },
 
-  superpower: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
-  animal: {
+  jellybean: {
     type: String,
     min: 0,
     max: 300
@@ -95,14 +110,14 @@ var profile = {
   gender: {
     type: String,
     enum: {
-      values: "M F O N".split(" ")
+      values: ["M", "F", "O", "N"]
     }
   },
 
   ethnicity: {
     type: String,
     enum: {
-      values: "A B C D E F G H".split(" ")
+      values: ["A", "B", "C", "D", "E", "F", "G", "H"]
     }
   },
 
@@ -116,6 +131,19 @@ var profile = {
     type: String,
     min: 0,
     max: 1500
+  },
+
+  resume: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
+
+  shirtSize: {
+    type: String,
+    enum: {
+      values: ["XS", "S", "M", "L", "XL", "XXL"]
+    }
   }
 };
 
@@ -123,20 +151,11 @@ var profile = {
 var confirmation = {
   phoneNumber: String,
   dietaryRestrictions: [String],
-  shirtSize: {
-    type: String,
-    enum: {
-      values: "XS S M L XL XXL WXS WS WM WL WXL WXXL".split(" ")
-    }
-  },
-  wantsHardware: Boolean,
-  hardware: String,
 
   major: String,
   github: String,
   twitter: String,
   website: String,
-  resume: String,
 
   needsReimbursement: Boolean,
   address: {
@@ -396,9 +415,8 @@ schema.statics.validateProfile = function(profile, cb) {
   return cb(
     !(
       profile.name.length > 0 &&
-      profile.adult &&
       profile.school.length > 0 &&
-      ["2016", "2017", "2018", "2019"].indexOf(profile.graduationYear) > -1 &&
+      ["H", "1", "2", "3", "4", "5", "G"].indexOf(profile.year) > -1 &&
       ["M", "F", "O", "N"].indexOf(profile.gender) > -1
     )
   );

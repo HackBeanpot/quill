@@ -108,12 +108,14 @@
         <label>Graduation Year</label>
         <select
           name="year"
-          ng-model="selectedUser.profile.graduationYear">
-          <option value="">Graduation Year</option>
-          <option value="2016">2016</option>
-          <option value="2017">2017</option>
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
+          ng-model="selectedUser.profile.year">
+          <option value="H">High School</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+          <option value="5">5th Year (and up)</option>
+          <option value="G">Graduate Student</option>
         </select>
       </div>
 
@@ -131,36 +133,112 @@
       </div>
 
       <div class="field">
-        <label>I would describe myself as a...</label>
+        <label>Ethnicity</label>
+        <select
+          name="ethnicity"
+          ng-model="selectedUser.profile.ethnicity">
+          <option value="A">American Indian or Alaska Native</option>
+          <option value="B">Asian</option>
+          <option value="C">Black or African American</option>
+          <option value="D">Hispanic or Latino</option>
+          <option value="E">Native Hawaiian or Pacific Islander</option>
+          <option value="F">White</option>
+          <option value="G">Two or more races</option>
+          <option value="H">Other</option>
+        </select>
+      </div>
+
+
+      <div class="field">
+        <label>What's your favorite hype song?</label>
         <input type="text"
-               placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-               ng-model="selectedUser.profile.description">
+                ng-model="selectedUser.profile.hypesong">
+      </div>
+
+      <div class="field">
+        <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;))</label>
+        <input type="text"
+                ng-model="selectedUser.profile.jellybean">
+      </div>
+
+      <div class="checkbox-label"> What is your experience with Hackathons? </div>
+      <div class="field"
+        ng-repeat="(key, value) in hackerExperience">
+
+        <div class="ui checkbox">
+          <input type="checkbox" ng-model="hackerExperience[key]" />
+          <label>{{key}}</label>
+        </div>
+
+      </div>
+
+      <div class="field">
+        <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
+        <input type="text"
+                ng-model="selectedUser.profile.background">
+      </div>
+
+      <div class="field">
+        <label> Tech Interests </label>
+        <input
+          type="text" ng-model="selectedUser.confirmation.techInterests" />
+      </div>
+
+      <div class="field">
+        <label> Did you attend any events hosted by HackBeanpot in Fall 2019? </label>
+        <input
+          type="text" ng-model="selectedUser.confirmation.hbpOutreachEvents" />
+      </div>
+
+      <div class="field">
+        <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.)</label>
+        <input type="text"
+                ng-model="selectedUser.profile.activities">
+      </div>
+
+      <div class="field">
+          <label>
+            What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission)
+          </label>
+          <textarea placeholder="Ideas or topics" ng-model="selectedUser.profile.topicsTechnologies">
+          </textarea>
+      </div>
+
+      <div class="field">
+        <label> S.W.A.G. - Shirts We All Got. Shirt size? </label>
+        <select
+          name="shirt"
+          ng-model="selectedUser.profile.shirtSize"
+          required>
+          <option value=""></option>
+          <option value="XS">Unisex X-Small</option>
+          <option value="S">Unisex Small</option>
+          <option value="M">Unisex Medium</option>
+          <option value="L">Unisex Large</option>
+          <option value="XL">Unisex X-Large</option>
+          <option value="XXL">Unisex XX-Large</option>
+        </select>
       </div>
 
       <div class="field">
         <label>
-            What would you like to learn or get out of HackMIT? (optional)
+          Our theme is “Sprout” this year, which represents growth in new skills, relationships, and experiences. With this in mind, what are you hoping to get out of HackBeanpot? What do you want to walk away having learned or experienced?
         </label>
         <textarea ng-model="selectedUser.profile.essay">
         </textarea>
       </div>
 
-      <div class="field"
-           ng-hide="isMitStudent">
-        <p>
-          Because of limitations imposed by MIT, we are not legally allowed to host
-          non-MIT minors (those under 18) for HackMIT 2015. Checking the box below affirms that you are or will be 18 years or older by September 19th, 2015.
-        </p>
-        <p>
-          <strong>
-          We will be checking ID. If you are a non-MIT minor, you will be turned away at the door.
-          </strong>
-        </p>
-        <div class="ui checkbox">
-          <input type="checkbox" id="adult" ng-model="selectedUser.profile.adult">
-          <label for="adult">I am 18 or older.</label>
-        </div>
-      </div>
+      <div class="field">
+        <label> Are you planning on coming with a team? </label>
+        <select
+          name="teamPlan"
+          ng-model="selectedUser.profile.teamPlan">
+          <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
+          <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
+          <option value="I want to join a new team at the event">I want to join a new team at the event</option>
+          <option value="I want to work solo">I want to work solo.</option>
+        </select>
+      </div> 
 
       <div class="field">
         <div
@@ -206,192 +284,27 @@
       </div>
 
       <div class="field">
+        <label>Minor(s), if any</label>
+        <input type="text" ng-model="selectedUser.profile.minor">
+      </div>
+
+      <div class="field">
         <label> Github </label>
-        <input type="url" ng-model="selectedUser.profile.github" />
+        <input type="url" ng-model="selectedUser.confirmation.github" />
       </div>
 
       <div class="field">
         <label> Website </label>
-        <input type="url" ng-model="selectedUser.profile.website" />
+        <input type="url" ng-model="selectedUser.confirmation.website" />
       </div>
 
       <div class="field">
-        <label> Resume </label>
-        <input type="url" ng-model="selectedUser.profile.resume" />
-      </div>
-
-      <div class="ui divider"></div>
-
-      <div class="field">
-        <label>
-          Needs Hardware
-        </label>
-        <div class="ui checkbox">
-          <input type="checkbox" ng-model="selectedUser.confirmation.wantsHardware">
-          <label> Yup, I need hardware </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>
-        Hardware
-        </label>
-        <input type="text" ng-model="selectedUser.confirmation.hardware">
-      </div>
-
-      <div class="ui divider"></div>
-
-      <div class="ui header">
-        Hosting
-      </div>
-
-      <div class="field">
-        <strong> Needs Hosting Friday </strong>
-        <i
-          ng-if="selectedUser.confirmation.hostNeededFri"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.hostNeededFri"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <strong> Needs Hosting Saturday </strong>
-        <i
-          ng-if="selectedUser.confirmation.hostNeededSat"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.hostNeededSat"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <strong> Gender Neutral </strong>
-        <i
-          ng-if="selectedUser.confirmation.genderNeutral"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.genderNeutral"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <strong> Cat Friendly </strong>
-        <i
-          ng-if="selectedUser.confirmation.catFriendly"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.catFriendly"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <strong> Smoking Friendly </strong>
-        <i
-          ng-if="selectedUser.confirmation.smokingFriendly"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.smokingFriendly"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <label> Hosting Notes </label>
-        <textarea ng-model="selectedUser.confirmation.hostNotes"></textarea>
-      </div>
-
-      <div class="ui divider"></div>
-
-      <div class="ui header">
-        Travel
-      </div>
-
-      <div class="field">
-        <strong> Needs Reimbursement</strong>
-        <i
-          ng-if="selectedUser.confirmation.needsReimbursement"
-          class="green check circle icon">
-        </i>
-        <i
-          ng-if="!selectedUser.confirmation.needsReimbursement"
-          class="red remove circle icon">
-        </i>
-      </div>
-
-      <div class="field">
-        <label>Full Name</label>
+        <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
         <input type="text"
-               name="name"
-               ng-model="selectedUser.confirmation.address.name">
+               placeholder="Your Resume"
+               ng-model="selectedUser.profile.resume">    
       </div>
-
-      <div class="field">
-        <label> Address Line 1 - Street address, P.O. box, company name, c/o </label>
-        <input
-          type="text"
-          name="addressLine1"
-          ng-model="selectedUser.confirmation.address.line1">
-      </div>
-
-      <div class="field">
-        <label> Address Line 2 - Apartment, suite, unit, building, floor, etc. </label>
-        <input
-          type="text"
-          name="addressLine2"
-          ng-model="selectedUser.confirmation.address.line2">
-      </div>
-
-      <div class="four fields">
-        <div class="field">
-          <label> City </label>
-          <input
-            type="text"
-            name="city"
-            ng-model="selectedUser.confirmation.address.city">
-        </div>
-        <div class="field">
-          <label> State/Province/Region </label>
-          <input
-            type="text"
-            name="state"
-            ng-model="selectedUser.confirmation.address.state">
-        </div>
-        <div class="field">
-          <label> ZIP </label>
-          <input
-            type="text"
-            name="zip"
-            ng-model="selectedUser.confirmation.address.zip">
-        </div>
-        <div class="field">
-          <label> Country </label>
-          <input
-            type="text"
-            name="country"
-            ng-model="selectedUser.confirmation.address.country">
-        </div>
-      </div>
-
-      <div class="field">
-        <label> Receipt </label>
-        <input type="url" ng-model="selectedUser.confirmation.receipt" />
-      </div>
-
-      <div class="field">
-        <label> Additional Notes </label>
-        <textarea ng-model="selectedUser.confirmation.notes"></textarea>
-      </div>
-
+      
     </fieldset>
 
   </div>

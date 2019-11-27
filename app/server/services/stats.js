@@ -19,10 +19,13 @@ function calculateStats(){
       },
       schools: {},
       year: {
-        '2016': 0,
-        '2017': 0,
-        '2018': 0,
-        '2019': 0,
+        'H': 0,
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
+        'G': 0,
       }
     },
 
@@ -45,29 +48,10 @@ function calculateStats(){
       'M': 0,
       'L': 0,
       'XL': 0,
-      'XXL': 0,
-      'WXS': 0,
-      'WS': 0,
-      'WM': 0,
-      'WL': 0,
-      'WXL': 0,
-      'WXXL': 0,
-      'None': 0
+      'XXL': 0
     },
 
     dietaryRestrictions: {},
-
-    hostNeededFri: 0,
-    hostNeededSat: 0,
-    hostNeededUnique: 0,
-
-    hostNeededFemale: 0,
-    hostNeededMale: 0,
-    hostNeededOther: 0,
-    hostNeededNone: 0,
-
-    reimbursementTotal: 0,
-    reimbursementMissing: 0,
 
     checkedIn: 0
   };
@@ -134,8 +118,8 @@ function calculateStats(){
         newStats.demo.schools[email].declined += user.status.declined ? 1 : 0;
 
         // Count graduation years
-        if (user.profile.graduationYear){
-          newStats.demo.year[user.profile.graduationYear] += 1;
+        if (user.profile.year){
+          newStats.demo.year[user.profile.year] += 1;
         }
 
         // Grab the team name if there is one
@@ -147,8 +131,8 @@ function calculateStats(){
         // }
 
         // Count shirt sizes
-        if (user.confirmation.shirtSize in newStats.shirtSizes){
-          newStats.shirtSizes[user.confirmation.shirtSize] += 1;
+        if (user.profile.shirtSize in newStats.shirtSizes){
+          newStats.shirtSizes[user.profile.shirtSize] += 1;
         }
 
         // Host needed counts

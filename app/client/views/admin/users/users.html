@@ -186,7 +186,7 @@
               <button
                 ng-click="goUser($event, user)"
                 class="ui circular mini basic icon button">
-                <i class="linkify icon"></i>
+                <i class="linkify icon" title="view user in new page"></i>
               </button>
             </td>
 
@@ -196,7 +196,7 @@
               <button
                 class="accept ui circular mini basic green icon button"
                 ng-click="acceptUser($event, user, $index)">
-                <i class="add user icon"></i>
+                <i class="add user icon" title="accept user!!"></i>
               </button>
 
               <button
@@ -205,11 +205,11 @@
 
                 <i
                   ng-if="!user.status.checkedIn"
-                  class="flag outline icon"></i>
+                  class="flag outline icon" title="check this user in!"></i>
 
                 <i
                   ng-if="user.status.checkedIn"
-                  class="green flag icon"></i>
+                  class="green flag icon" title="this user has been checked in!"></i>
 
               </button>
 
@@ -219,11 +219,11 @@
 
                 <i
                   ng-if="!user.admin"
-                  class="spy outline icon"></i>
+                  class="green spy icon" title="make this user an admin!"></i>
 
                 <i
                   ng-if="user.admin"
-                  class="green spy icon"></i>
+                  class="red spy icon" title="remove this person from being an admin! DONT DO THIS"></i>
 
               </button>
 

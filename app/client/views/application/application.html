@@ -97,7 +97,7 @@
         </div>
         
         <div class="field">
-          <label>Minor</label>
+          <label>Minor(s), if any</label>
           <input type="text"
                  placeholder="Minor"
                  ng-model="user.profile.minor">
@@ -144,9 +144,8 @@
 
         <div class="field">
           <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
-          <input type="text"
-                 placeholder="Give us a snapshot of your skillset!"
-                 ng-model="user.profile.background">
+          <textarea ng-model="user.profile.background">
+          </textarea>
         </div>
 
         <br>
@@ -165,7 +164,7 @@
         <br>
 
         <div class="field">
-            <label>Send us a Google !!! Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
             <input type="text"
                    placeholder="Your Resume"
                    ng-model="user.profile.resume">    
@@ -253,18 +252,21 @@
 
         <div class="thank you">
           <p>
-              Thanks for your interest! We can’t wait to learn about you! We will let you know by the week of January 17, 2020 if you've been accepted or if you’ll be on our waitlist. Stay tuned! 
+              Thank you for your interest - we can’t wait to learn about you! Our team will let you know by the week of January 17, 2020 if you've been accepted or if you’ll be on our waitlist. Stay tuned!
           </p>
           <p>
-              If you have any questions in the meantime, feel free to reach out to us at
-               <a href="mailto:team@hackbeanpot.com" class="inline-link" title="Email us!"> team@hackbeanpot.com</a>,
-                and visit our website 
-                <a href="https://hackbeanpot.com" class="inline-link" title="Our website!"> https://hackbeanpot.com</a>.
-                Check us out on Instagram
-                 <a class="inline-link" href="https://www.instagram.com/hackbeanpot/" title="Our Instagram!"> @hackbeanpot </a>
-                  or on Twitter <a class="inline-link" href="https://twitter.com/HackBeanpot" title="Our Twitter!"> @HackBeanpot </a> to stay up to date with the latest HackBeanpot news!
+            If you have any questions in the meantime, feel free to reach out to us at 
+            <a href="mailto:team@hackbeanpot.com" target="_blank" class="inline-link" title="Email us!"> team@hackbeanpot.com</a>
+            and visit our website 
+            <a href="https://hackbeanpot.com" target="_blank" class="inline-link" title="Our website!"> https://hackbeanpot.com</a>.
+            Follow us on social media 
+            (<a href="https://www.instagram.com/hackbeanpot" title="Our Instagram!" target="_blank" class="inline-link">@hackbeanpot</a>)
+            or sign up for our 
+            <a href="http://eepurl.com/gCU4x1" target="_blank" title="Join our newsletter!" class="inline-link"> newsletter </a> 
+            for more information and updates!
+           
           </p>
-          <p> You can also sign up for our newsletter <a href="http://eepurl.com/gCU4x1" title="Join our newsletter!" class="inline-link"> here</a> for even more information! </p>
+          
         </div>
 
         <br>

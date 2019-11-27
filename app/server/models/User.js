@@ -66,10 +66,7 @@ var profile = {
   },
 
   hackerExperience: {
-    type: String,
-    enum: {
-      values: ['First time at a hackathon?', 'First time at HackBeanpot?', 'I would be interested in a first time hacker orientation']
-    }
+    type: [String],
   },
 
   teamPlan: {
@@ -140,6 +137,13 @@ var profile = {
     type: String,
     min: 0,
     max: 1500
+  },
+
+  shirtSize: {
+    type: String,
+    enum: {
+      values: ["XS", "S", "M", "L", "XL", "XXL"]
+    }
   }
 };
 
@@ -147,12 +151,6 @@ var profile = {
 var confirmation = {
   phoneNumber: String,
   dietaryRestrictions: [String],
-  shirtSize: {
-    type: String,
-    enum: {
-      values: "XS S M L XL XXL WXS WS WM WL WXL WXXL".split(" ")
-    }
-  },
 
   major: String,
   github: String,

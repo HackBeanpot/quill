@@ -33,7 +33,8 @@ angular.module('reg')
         'Cybersecurity': false,
         'Human Computer Interaction': false,
         'Game Development': false,
-        'CS Theory / Algorithms': false
+        'CS Theory / Algorithms': false,
+        'Other': false
       };
 
       if (user.profile.techInterests){
@@ -47,6 +48,30 @@ angular.module('reg')
       $scope.techInterests = techInterests;
 
       // -------------------------------
+
+      // -------------------------------
+      // Hacker experience 
+
+      var hackerExperience = {
+        'I’ve never attended a hackathon': false,
+        'I’ve attended hackathons before': false,
+        'I’ve never attended HackBeanpot': false,
+        'I’ve attended HackBeanpot before': false,
+        'I would be interested in attending a first-time hacker orientation': false
+      };
+
+      if (user.profile.hackerExperience){
+        user.profile.hackerExperience.forEach(function(he){
+          if (he in hackerExperience){
+            hackerExperience[he] = true;
+          }
+        });
+      }
+
+      $scope.hackerExperience = hackerExperience;
+
+      // -------------------------------
+
 
       // -------------------------------
       // Heard About Us
@@ -151,6 +176,15 @@ angular.module('reg')
         });
         profile.techInterests = tis;
 
+        // Get the tech interests as an array
+        var hes = [];
+        Object.keys($scope.hackerExperience).forEach(function(key){
+          if ($scope.hackerExperience[key]){
+            hes.push(key);
+          }
+        });
+        profile.hackerExperience = hes;
+ 
         // Get the heard about us as an array
         var hauArray = [];
         Object.keys($scope.heardAboutUs).forEach(function(key){

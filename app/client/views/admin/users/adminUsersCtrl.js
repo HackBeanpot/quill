@@ -259,6 +259,11 @@ angular.module('reg')
           hbpOutreachEvents = user.profile.hbpOutreachEvents;
         }
 
+        var hackerExperience = [];
+        if (user.profile.hackerExperience) {
+          hackerExperience = user.profile.hackerExperience;
+        }
+
         return [
           {
             name: 'Basic Info',
@@ -342,13 +347,16 @@ angular.module('reg')
                 value: hbpOutreachEvents.join(', ')
               },{
                 name: 'Hacker Experience',
-                value: user.profile.hackerExperience
+                value: hackerExperience.join(', ')
               },{
                 name: 'What is their plan for a team?',
                 value: user.profile.teamPlan
               },{
                 name: 'Resume',
                 value: user.profile.resume
+              },{
+                name: 'Shirt Size',
+                value: user.profile.shirtSize
               }
             ]
           },{

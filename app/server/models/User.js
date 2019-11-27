@@ -65,6 +65,12 @@ var profile = {
     type: [String]
   },
 
+  otherTechInterests: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
   hackerExperience: {
     type: [String],
   },
@@ -78,6 +84,12 @@ var profile = {
     type: [String]
   },
 
+  otherHeardAboutUs: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+  
   hbpOutreachEvents: {
     type: [String]
   },

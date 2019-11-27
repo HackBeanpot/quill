@@ -325,8 +325,14 @@ angular.module('reg')
                 name: 'Tech Interests',
                 value: user.profile.techInterests.join(', ')
               },{
+                name: 'Other Tech Interests',
+                value: user.profile.otherTechInterests,
+              },{
                 name: 'Hear About Us',
                 value: user.profile.heardAboutUs.join(', ')
+              },{
+                name: 'Other Heard About Us',
+                value: user.profile.otherHeardAboutUs
               },{
                 name: 'HBP Outreach Events',
                 value: user.profile.hbpOutreachEvents.join(', ')

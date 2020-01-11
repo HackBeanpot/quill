@@ -366,8 +366,8 @@ angular.module('reg')
                 name: 'Website',
                 value: user.confirmation.website
               },{
-                name: 'Twitter',
-                value: user.confirmation.twitter
+                name: 'LinkedIn',
+                value: user.confirmation.linkedin
               },{
                 name: 'Liability',
                 value: user.confirmation.signatureLiability

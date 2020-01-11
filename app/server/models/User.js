@@ -166,7 +166,7 @@ var confirmation = {
   otherDietaryRestrictions: String,
 
   github: String,
-  twitter: String,
+  linkedin: String,
   website: String,
 
   signatureLiability: String,

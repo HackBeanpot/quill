@@ -19,15 +19,15 @@
     border-left: 0px solid transparent;
 
     &.active:not(.logo) {
-      background: lighten($yellow-green-disabled, 4%);
+      background: lighten($light-blue-disabled, 4%);
       color: $hbp-navy;
       opacity: 1;
-      border-left: 8px solid lighten($yellow-green-disabled, 10%);
+      border-left: 8px solid lighten($light-blue-disabled, 10%);
     }
     &:hover:not(.logo) {
       cursor: pointer;
       color: $hbp-navy;
-      background: darken($yellow-green-disabled, 2%);
+      background: darken($light-blue-disabled, 2%);
       opacity: 1;
     }
 

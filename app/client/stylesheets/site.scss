@@ -5,7 +5,7 @@ $font-body: 'Nunito Sans', sans-serif;
 
 // Login screen variables
 $login-bg-color: $secondary;
-$login-color: $yellow-green;
+$login-color: $light-blue;
 $register-color: $tertiary;
 
 $status-unverified-color: rgb(82, 82, 82);
@@ -125,11 +125,11 @@ fieldset {
 }
 
 .ui.button.primary-cta {
-  background-color: $yellow-green;
+  background-color: $light-blue;
   color: $hbp-navy;
 
   &:hover {
-    background-color: $yellow-green-hover; 
+    background-color: $light-blue-hover; 
   }
 }
 

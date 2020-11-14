@@ -185,15 +185,6 @@ angular.module('reg')
                 }
               ]
             },
-            gender: {
-              identifier: 'gender',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Please select a gender.'
-                }
-              ]
-            },
             school: {
               identifier: 'school',
               rules: [

@@ -11,12 +11,12 @@ function calculateStats(){
 
     total: 0,
     demo: {
-      gender: {
-        M: 0,
-        F: 0,
-        O: 0,
-        N: 0
-      },
+      // gender: {
+      //   M: 0,
+      //   F: 0,
+      //   O: 0,
+      //   N: 0
+      // },
       schools: {},
       year: {
         'H': 0,
@@ -66,7 +66,7 @@ function calculateStats(){
         var email = user.email.split('@')[1];
 
         // Add to the gender
-        newStats.demo.gender[user.profile.gender] += 1;
+        //newStats.demo.gender[user.profile.gender] += 1;
 
         // Count verified
         newStats.verified += user.verified ? 1 : 0;

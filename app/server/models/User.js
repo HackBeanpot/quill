@@ -88,12 +88,6 @@ var profile = {
     max: 100
   },
 
-  activities: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
   // Temporarily hiding since 2021 is virtual
   // dietaryRestrictions: {
   //   type: String,
@@ -439,7 +433,6 @@ schema.statics.validateProfile = function(profile, cb) {
       ["yes", "no"].indexOf(profile.hasTeam) > -1 &&
       ["yes", "no"].indexOf(profile.teamFormationPlan) > -1 &&
       // new above, old below
-      profile.activities.length > 0 &&
       profile.heardAboutUs.length > 0 &&
       profile.techInterests.length > 0 &&
       profile.hackerExperience.length > 0

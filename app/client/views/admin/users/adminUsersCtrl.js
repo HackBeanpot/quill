@@ -323,9 +323,6 @@ angular.module('reg')
               },{
                 name: 'Special Accomodations',
                 value: user.profile.specialAccomodations
-              },{
-                name: 'Activities',
-                value: user.profile.activities
               // },{
               //   name: 'Dietary Restrictions',
               //   value: user.profile.dietaryRestrictions

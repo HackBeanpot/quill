@@ -80,7 +80,6 @@ angular.module('reg')
         'Hispanic or Latino': false,
         'Native Hawaiian or Other Pacific Islander': false,
         'White': false,
-        'Two or more races': false,
         'Other': false
       };
 

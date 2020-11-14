@@ -249,6 +249,8 @@
           </select>
         </div>
 
+        <br>
+
         <p class="section description"> 
           If you don’t have a team or would like to add more members to your team, we will have 
           a project ideation session and team formation activity we’d love for you to attend. In 
@@ -271,30 +273,6 @@
 
         <br>
 
-        <!-- Old Questions -->
-
-        <div class="checkbox-label"> Tech Interests  <span class="required">*</span> </div>
-        <div class="field"
-          ng-repeat="(key, value) in techInterests">
-
-          <div class="ui checkbox">
-            <input type="checkbox" ng-model="techInterests[key]" />
-            <label>{{key}}</label>
-          </div>
-        </div>
-
-        <div class="field" ng-show="techInterests['Other']">
-          <label>Other Tech Interests </label>
-          <input ng-model="user.profile.otherTechInterests"
-                 type="text" 
-                 placeholder="Programming Languages, etc.">
-          </input>
-        </div>
-        
-        <br>
-
-        <div class="divided title">HackBeanpot-Related Things</div>
-
         <div class="checkbox-label"> How did you hear about us?  <span class="required">*</span> </div>
         <div class="field"
           ng-repeat="(key, value) in heardAboutUs">
@@ -309,6 +287,29 @@
           <label>How else did you hear about us? </label>
           <input ng-model="user.profile.otherHeardAboutUs"
                  type="text">
+          </input>
+        </div>
+
+        <br>
+
+        <div class="checkbox-label">
+          Which of the following workshops/activities would you be excited for? 
+          <span class="required">*</span> 
+        </div>
+        <div class="field"
+          ng-repeat="(key, value) in activityInterests">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="activityInterests[key]" />
+            <label>{{key}}</label>
+          </div>
+        </div>
+
+        <div class="field" ng-show="activityInterests['Other']">
+          <label>Other Workshops or Activities </label>
+          <input ng-model="user.profile.otheractivityInterests"
+                 type="text" 
+                 placeholder="Programming Languages, etc.">
           </input>
         </div>
 

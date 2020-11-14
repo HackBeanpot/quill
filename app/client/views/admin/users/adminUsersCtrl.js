@@ -22,7 +22,7 @@ angular.module('reg')
       $scope.selectedUser.sections = generateSections({status: '', confirmation: {
         //dietaryRestrictions: []
       }, profile: {
-        techInterests: [],
+        activityInterests: [],
         heardAboutUs: [],
       }});
 
@@ -329,11 +329,11 @@ angular.module('reg')
                 name: 'Shirt Size',
                 value: user.profile.shirtSize
               },{
-                name: 'Tech Interests',
-                value: user.profile.techInterests.join(', ')
+                name: 'Activity Interests',
+                value: user.profile.activityInterests.join(', ')
               },{
-                name: 'Other Tech Interests',
-                value: user.profile.otherTechInterests,
+                name: 'Other Activity Interests',
+                value: user.profile.otheractivityInterests,
               },{
                 name: 'Hear About Us',
                 value: user.profile.heardAboutUs.join(', ')

@@ -18,34 +18,30 @@ angular.module('reg')
       $scope.user = user;
 
       // -------------------------------
-      // All this just for tech interests checkboxes fml
+      // All this just for activity interests checkboxes fml
 
-      var techInterests = {
-        'Hardware': false,
-        'Web Development': false,
-        'Mobile App Development': false,
-        'AI/Machine Learning': false,
-        ' Data Science / Data Visualization / Data Analytics': false,
-        'AR/VR': false,
-        'Natural Language Processing': false,
-        'UI/UX Design': false,
-        'IoT': false,
-        'Cybersecurity': false,
-        'Human Computer Interaction': false,
-        'Game Development': false,
-        'CS Theory / Algorithms': false,
+      var activityInterests = {
+        'Meeting other hackers in camper cabins': false,
+        'Winning the Cabin Cup by attending workshops + activities': false,
+        'Project ideation/team formation': false,
+        'Intro to Git and Working With a Team Remotely': false,
+        'Hackathons for Resumes': false,
+        'How to Demo a Project for Judging': false,
+        'Careers in Tech': false,
+        'Diversity in Tech': false,
+        'Tech for Social Good': false,
         'Other': false
       };
 
-      if (user.profile.techInterests){
-        user.profile.techInterests.forEach(function(techInterest){
-          if (techInterest in techInterests){
-            techInterests[techInterest] = true;
+      if (user.profile.activityInterests){
+        user.profile.activityInterests.forEach(function(techInterest){
+          if (techInterest in activityInterests){
+            activityInterests[techInterest] = true;
           }
         });
       }
 
-      $scope.techInterests = techInterests;
+      $scope.activityInterests = activityInterests;
 
 
       // -------------------------------
@@ -124,14 +120,14 @@ angular.module('reg')
 
       function _updateUser(e){
         var profile = $scope.user.profile;
-        // Get the tech interests as an array
+        // Get the activity interests as an array
         var tis = [];
-        Object.keys($scope.techInterests).forEach(function(key){
-          if ($scope.techInterests[key]){
+        Object.keys($scope.activityInterests).forEach(function(key){
+          if ($scope.activityInterests[key]){
             tis.push(key);
           }
         });
-        profile.techInterests = tis;
+        profile.activityInterests = tis;
  
         // Get the heard about us as an array
         var hauArray = [];

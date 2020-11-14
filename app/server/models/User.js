@@ -95,11 +95,11 @@ var profile = {
   //   max: 300
   // },
 
-  techInterests: {
+  activityInterests: {
     type: [String]
   },
 
-  otherTechInterests: {
+  otheractivityInterests: {
     type: String,
     min: 0,
     max: 300
@@ -430,7 +430,7 @@ schema.statics.validateProfile = function(profile, cb) {
       ["yes", "no"].indexOf(profile.teamFormationPlan) > -1 &&
       // new above, old below
       profile.heardAboutUs.length > 0 &&
-      profile.techInterests.length > 0 &&
+      profile.activityInterests.length > 0 &&
       profile.hackerExperience.length > 0
     )
   );

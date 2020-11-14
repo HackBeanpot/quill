@@ -23,7 +23,6 @@ angular.module('reg')
         dietaryRestrictions: []
       }, profile: {
         techInterests: [],
-        hackerExperience: [],
         heardAboutUs: [],
         hbpOutreachEvents: [],
       }});
@@ -304,23 +303,26 @@ angular.module('reg')
                 name: 'Graduation Year',
                 value: user.profile.year
               },{
-                name: 'Background',
-                value: user.profile.background
+                name: 'Hackathons Attended',
+                value: user.profile.hackathonsAttended
+              },{
+                name: 'Virtual Likes or Dislikes',
+                value: user.profile.virtualOpinions
+              },{
+                name: 'Learning Goals',
+                value: user.profile.learningGoals
+              },{
+                name: 'Passions',
+                value: user.profile.passions
               },{
                 name: 'Activities',
                 value: user.profile.activities
-              },{
-                name: 'Topics and Technologies',
-                value: user.profile.topicsTechnologies
               },{
                 name: 'Dietary Restrictions',
                 value: user.profile.dietaryRestrictions
               },{
                 name: 'Shirt Size',
                 value: user.profile.shirtSize
-              },{
-                name: 'Essay',
-                value: user.profile.essay
               },{
                 name: 'Tech Interests',
                 value: user.profile.techInterests.join(', ')
@@ -336,9 +338,6 @@ angular.module('reg')
               },{
                 name: 'HBP Outreach Events',
                 value: user.profile.hbpOutreachEvents.join(', ')
-              },{
-                name: 'Hacker Experience',
-                value: user.profile.hackerExperience.join(', ')
               },{
                 name: 'What is their plan for a team?',
                 value: user.profile.teamPlan

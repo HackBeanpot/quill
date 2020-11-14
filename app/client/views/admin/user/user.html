@@ -176,15 +176,39 @@
       <!-- Interests and Experience-->
 
       <div class="field">
-        <label> What is your experience with Hackathons? </label>
-        <input
-          type="text" ng-model="selectedUser.profile.hackerExperience" />
+        <label>How many hackathons have you attended? <span class="required">*</span></label>
+        <select
+          name="hackathonsAttended"
+          ng-model="selectedUser.profile.hackathonsAttended">
+          <option value="0">0</option>
+          <option value="1">1-2</option>
+          <option value="3">3-5</option>
+          <option value="6">6+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>If you've attended a virtual hackathon in the past, what did you like/dislike?</label>
+        <input type="text"
+                ng-model="selectedUser.profile.virtualOpinions">
+      </div>
+
+      <div class="field">
+        <label>
+          At HackBeanpot 2021, we aim to create a welcoming “campsite” by emphasizing our 
+          focus on exploration, creativity, and respect for the world around us! Camping 
+          represents community, sustainability, and the goal to help each other thrive.
+          With this in mind, what are you hoping to get out of HackBeanpot? What do you want to
+          walk away having learned or experienced? 
+        </label>
+        <input type="text"
+                ng-model="selectedUser.profile.learningGoals">
       </div>
 
       <div class="field">
         <label>What’s your background? What could you talk for hours about? Give us a snapshot of who you are and your journey in tech.</label>
         <input type="text"
-                ng-model="selectedUser.profile.background">
+                ng-model="selectedUser.profile.passions">
       </div>
 
       <div class="field">
@@ -221,22 +245,6 @@
         <label>What kind of activities, talks, or workshops would you like to attend at HackBeanpot? (Ex. Yoga, professional development talk, React workshop, etc.)</label>
         <input type="text"
                 ng-model="selectedUser.profile.activities">
-      </div>
-
-      <div class="field">
-          <label>
-            What kind of ideas or topics would you be interested in exploring at HackBeanpot? (Your answer won’t affect your admission)
-          </label>
-          <textarea placeholder="Ideas or topics" ng-model="selectedUser.profile.topicsTechnologies">
-          </textarea>
-      </div>
-
-      <div class="field">
-        <label>
-          Our theme is “Sprout” this year, which represents growth in new skills, relationships, and experiences. With this in mind, what are you hoping to get out of HackBeanpot? What do you want to walk away having learned or experienced?
-        </label>
-        <textarea ng-model="selectedUser.profile.essay">
-        </textarea>
       </div>
 
       <div class="field">

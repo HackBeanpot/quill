@@ -24,10 +24,24 @@ var profile = {
     max: 150
   },
 
+  educationLevel: {
+    type: String,
+    enum: {
+      values: ["H", "U", "G"]
+    }
+  },
+
   year: {
     type: String,
     enum: {
-      values: ["H", "1", "2", "3", "4", "5", "G"]
+      values: ["1", "2", "3", "4", "5"]
+    }
+  },
+
+  hackathonsAttended: {
+    type: String,
+    enum: {
+      values: ["0", "1", "3", "6"]
     }
   },
 
@@ -37,13 +51,19 @@ var profile = {
     max: 300
   },
 
-  essay: {
+  virtualOpinions: {
     type: String,
     min: 0,
-    max: 1500
+    max: 300
   },
 
-  background: {
+  learningGoals: {
+    type: String,
+    min: 0,
+    max: 300
+  },
+
+  passions: {
     type: String,
     min: 0,
     max: 300
@@ -71,10 +91,6 @@ var profile = {
     max: 300
   },
 
-  hackerExperience: {
-    type: [String],
-  },
-
   teamPlan: {
     type: String,
     enum: ['I have a team that I plan to come and work with', 'I have a team in mind but would be open to finding a new team at the event', 'I want to join a new team at the event', 'I want to work solo']
@@ -98,12 +114,6 @@ var profile = {
     type: String,
     min: 0,
     max: 300
-  },
-
-  topicsTechnologies: {
-    type: String,
-    min: 0,
-    max: 1500
   },
 
   misc: {
@@ -407,11 +417,12 @@ schema.statics.validateProfile = function(profile, cb) {
       ["H", "U", "G"].indexOf(profile.educationLevel) > -1 &&
       ["1", "2", "3", "4", "5"].indexOf(profile.year) > -1 &&
       profile.timezone.length > 0 &&
-      profile.background.length > 0 &&
-      profile.activities.length > 0 &&
-      profile.topicsTechnologies.length > 0 &&
-      profile.essay.length > 0 &&
       ["XS", "S", "M", "L", "XL", "XXL"].indexOf(profile.shirtSize) > -1 &&
+      ["0", "1", "3", "6"].indexOf(profile.hackathonsAttended) > -1 &&
+      profile.learningGoals.length > 0 &&
+      profile.passions.length > 0 &&
+      // new above, old below
+      profile.activities.length > 0 &&
       ['I have a team that I plan to come and work with',
        'I have a team in mind but would be open to finding a new team at the event', 
        'I want to join a new team at the event', 'I want to work solo'].indexOf(profile.teamPlan) > -1 &&

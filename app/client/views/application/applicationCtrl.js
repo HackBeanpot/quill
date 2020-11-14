@@ -47,31 +47,6 @@ angular.module('reg')
 
       $scope.techInterests = techInterests;
 
-      // -------------------------------
-
-      // -------------------------------
-      // Hacker experience 
-
-      var hackerExperience = {
-        'I’ve never attended a hackathon': false,
-        'I’ve attended hackathons before': false,
-        'I’ve never attended HackBeanpot': false,
-        'I’ve attended HackBeanpot before': false,
-        'I would be interested in attending a first-time hacker orientation': false
-      };
-
-      if (user.profile.hackerExperience){
-        user.profile.hackerExperience.forEach(function(he){
-          if (he in hackerExperience){
-            hackerExperience[he] = true;
-          }
-        });
-      }
-
-      $scope.hackerExperience = hackerExperience;
-
-      // -------------------------------
-
 
       // -------------------------------
       // Heard About Us
@@ -176,15 +151,6 @@ angular.module('reg')
           }
         });
         profile.techInterests = tis;
-
-        // Get the tech interests as an array
-        var hes = [];
-        Object.keys($scope.hackerExperience).forEach(function(key){
-          if ($scope.hackerExperience[key]){
-            hes.push(key);
-          }
-        });
-        profile.hackerExperience = hes;
  
         // Get the heard about us as an array
         var hauArray = [];
@@ -251,12 +217,30 @@ angular.module('reg')
                 }
               ]
             },
+            gender: {
+              identifier: 'gender',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select a gender.'
+                }
+              ]
+            },
             school: {
               identifier: 'school',
               rules: [
                 {
                   type: 'empty',
                   prompt: 'Please enter your school name.'
+                }
+              ]
+            },
+            educationLevel: {
+              identifier: 'educationLevel',
+              rules: [
+                {
+                  type: 'empty',
+                  prompt: 'Please select your education level.'
                 }
               ]
             },
@@ -269,12 +253,12 @@ angular.module('reg')
                 }
               ]
             },
-            gender: {
-              identifier: 'gender',
+            hackathonsAttended: {
+              identifier: 'hackathonsAttended',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select a gender.'
+                  prompt: 'Please select the number of hackathons you have attended.'
                 }
               ]
             },

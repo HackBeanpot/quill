@@ -38,21 +38,15 @@
                  placeholder="Gender"
                  ng-model="user.profile.gender">
         </div>
-        
-        <div class="field">
-          <label>What ethnicities do you identify as?</label>
-          <select
-            name="ethnicity"
-            ng-model="user.profile.ethnicity">
-            <option value="A">Indigenous American or Alaska Native</option>
-            <option value="B">Asian (Far East, Southeast, South)</option>
-            <option value="C">Black or African American</option>
-            <option value="D">Hispanic or Latino</option>
-            <option value="E">Native Hawaiian or Other Pacific Islander</option>
-            <option value="F">White</option>
-            <option value="G">Two or more races</option>
-            <option value="H">Other</option>
-          </select>
+
+        <div class="checkbox-label">What ethnicities do you identify as?</div>
+        <div class="field"
+          ng-repeat="(key, value) in ethnicity">
+
+          <div class="ui checkbox">
+            <input type="checkbox" ng-model="ethnicity[key]" />
+            <label>{{key}}</label>
+          </div>
         </div>
 
         <div class="field" ng-show="autoFilledSchool">

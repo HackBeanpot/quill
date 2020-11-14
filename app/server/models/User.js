@@ -136,10 +136,7 @@ var profile = {
   },
 
   ethnicity: {
-    type: String,
-    enum: {
-      values: ["A", "B", "C", "D", "E", "F", "G", "H"]
-    }
+    type: [String]
   },
 
   major: {

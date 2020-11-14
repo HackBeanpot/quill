@@ -34,9 +34,9 @@ angular.module('reg')
       };
 
       if (user.profile.activityInterests){
-        user.profile.activityInterests.forEach(function(techInterest){
-          if (techInterest in activityInterests){
-            activityInterests[techInterest] = true;
+        user.profile.activityInterests.forEach(function(interest){
+          if (interest in activityInterests){
+            activityInterests[interest] = true;
           }
         });
       }
@@ -68,6 +68,31 @@ angular.module('reg')
       }
 
       $scope.heardAboutUs = heardAboutUs;
+
+
+      // -------------------------------
+      // Ethnicity
+
+      var ethnicity = {
+        'Indigenous American or Alaska Native': false,
+        'Asian (Far East, Southeast, South)': false,
+        'Black or African American': false,
+        'Hispanic or Latino': false,
+        'Native Hawaiian or Other Pacific Islander': false,
+        'White': false,
+        'Two or more races': false,
+        'Other': false
+      };
+
+      if (user.profile.ethnicity){
+        user.profile.ethnicity.forEach(function(hau){
+          if (hau in ethnicity){
+            ethnicity[hau] = true;
+          }
+        });
+      }
+
+      $scope.ethnicity = ethnicity;
 
       // -------------------------------
 
@@ -120,6 +145,7 @@ angular.module('reg')
 
       function _updateUser(e){
         var profile = $scope.user.profile;
+
         // Get the activity interests as an array
         var tis = [];
         Object.keys($scope.activityInterests).forEach(function(key){
@@ -137,6 +163,15 @@ angular.module('reg')
           }
         });
         profile.heardAboutUs = hauArray;
+ 
+        // Get the ethnicities as an array
+        var ethnicityArray = [];
+        Object.keys($scope.ethnicity).forEach(function(key){
+          if ($scope.ethnicity[key]){
+            ethnicityArray.push(key);
+          }
+        });
+        profile.ethnicity = ethnicityArray;
         
 
         UserService

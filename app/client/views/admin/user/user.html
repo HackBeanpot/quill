@@ -97,19 +97,9 @@
       </div>
 
       <div class="field">
-        <label>Ethnicity</label>
-        <select
-          name="ethnicity"
-          ng-model="selectedUser.profile.ethnicity">
-          <option value="A">Indigenous American or Alaska Native</option>
-          <option value="B">Asian (Far East, Southeast, South)</option>
-          <option value="C">Black or African American</option>
-          <option value="D">Hispanic or Latino</option>
-          <option value="E">Native Hawaiian or Other Pacific Islander</option>
-          <option value="F">White</option>
-          <option value="G">Two or more races</option>
-          <option value="H">Other</option>
-        </select>
+        <label>What ethnicities do you identify as? </label>
+        <input
+          type="text" ng-model="selectedUser.profile.ethnicity" />
       </div>
 
       <div class="field" ng-show="autoFilledSchool">

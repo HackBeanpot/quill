@@ -9,7 +9,11 @@
       <div class="ui form"
             ng-class="{'loading': loading}">
 
-        <p class="application-description"> Questions marked with <span class="required">*</span> are required. After you submit your application, you can come back and edit it anytime. </p>
+        <p class="application-description"> 
+          Questions marked with <span class="required">*</span> are required. 
+          If you leave this page before submitting, your responses will not be saved.
+          After you submit your application, you can come back and edit it anytime. 
+        </p>
 
         <div class="divided title">Let's get to know you!</div>
 
@@ -92,7 +96,7 @@
         </div>
 
         <div class="field">
-          <label>What are you majoring in? <span class="required">*</span></label>
+          <label>What are you majoring in? (N/A if in highschool) <span class="required">*</span></label>
           <input type="text"
                  placeholder="Major"
                  ng-model="user.profile.major">

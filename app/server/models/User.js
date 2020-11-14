@@ -114,10 +114,6 @@ var profile = {
     min: 0,
     max: 300
   },
-  
-  hbpOutreachEvents: {
-    type: [String]
-  },
 
   timezone: {
     type: String,

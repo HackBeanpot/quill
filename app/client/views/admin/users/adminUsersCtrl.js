@@ -24,7 +24,6 @@ angular.module('reg')
       }, profile: {
         techInterests: [],
         heardAboutUs: [],
-        hbpOutreachEvents: [],
       }});
 
       function updatePage(data){
@@ -341,9 +340,6 @@ angular.module('reg')
               },{
                 name: 'Other Heard About Us',
                 value: user.profile.otherHeardAboutUs
-              },{
-                name: 'HBP Outreach Events',
-                value: user.profile.hbpOutreachEvents.join(', ')
               },{
                 name: 'Resume',
                 value: user.profile.resume

@@ -76,26 +76,6 @@ angular.module('reg')
       // -------------------------------
 
       // -------------------------------
-      // HBP Outreach Events
-
-      var hbpOutreachEvents = {
-        'CoSMO x HBP: Intro to Hackathons (9/25)': false,
-        'HBP @ Tufts PolyHack (10/11)': false,
-        'HBP x WISE x NUWIT: Breaking into Data Visualization (11/3)': false
-      };
-
-      if (user.profile.hbpOutreachEvents){
-        user.profile.hbpOutreachEvents.forEach(function(hoe){
-          if (hoe in hbpOutreachEvents){
-            hbpOutreachEvents[hoe] = true;
-          }
-        });
-      }
-
-      $scope.hbpOutreachEvents = hbpOutreachEvents;
-
-      // -------------------------------
-
       // Populate the school dropdown
       populateSchools();
       _setupForm();
@@ -161,15 +141,6 @@ angular.module('reg')
           }
         });
         profile.heardAboutUs = hauArray;
-
-        // Get the hbp outreach events as an array
-        var hoes = [];
-        Object.keys($scope.hbpOutreachEvents).forEach(function(key){
-          if ($scope.hbpOutreachEvents[key]){
-            hoes.push(key);
-          }
-        });
-        profile.hbpOutreachEvents = hoes;
         
 
         UserService

@@ -315,6 +315,12 @@ angular.module('reg')
                 name: 'Passions',
                 value: user.profile.passions
               },{
+                name: 'Passions',
+                value: user.profile.hasTeam
+              },{
+                name: 'Passions',
+                value: user.profile.teamFormationPlan
+              },{
                 name: 'Activities',
                 value: user.profile.activities
               },{
@@ -338,9 +344,6 @@ angular.module('reg')
               },{
                 name: 'HBP Outreach Events',
                 value: user.profile.hbpOutreachEvents.join(', ')
-              },{
-                name: 'What is their plan for a team?',
-                value: user.profile.teamPlan
               },{
                 name: 'Resume',
                 value: user.profile.resume

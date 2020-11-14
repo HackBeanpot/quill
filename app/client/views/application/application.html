@@ -118,7 +118,11 @@
                  ng-model="user.profile.timezone">
         </div>
 
-        <p class="section description"> Please note: Our events are best viewed in EST - PST, but we’ll do our best to upload recordings as soon as possible for those joining from other time zones, as well as spread out our activities throughout the day. </p>
+        <p class="section description"> 
+          Please note: Our events are best viewed in EST - PST, but we’ll do our best to 
+          upload recordings as soon as possible for those joining from other 
+          time zones, as well as spread out our activities throughout the day. 
+        </p>
 
         <div class="field">
           <label>Shirt size? <span class="required">*</span> </label>
@@ -137,7 +141,10 @@
         </div>
 
         <div class="field">
-            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+            <label>
+              Send us a Google Drive link to your resume (in PDF format) - 
+              This is not for us to look at! We will simply pass your resume on to our sponsors.
+            </label>
             <input type="text"
                    placeholder="Your Resume"
                    ng-model="user.profile.resume">    
@@ -151,7 +158,9 @@
 
         <div class="section description">
           <p>
-              Let us know what you’re interested in! Don’t be shy. If you’ve been looking for the opportunity to gain some experience, HackBeanpot is the perfect place to explore and learn something new!
+              Let us know what you’re interested in! Don’t be shy. If you’ve been looking for the 
+              opportunity to gain some experience, HackBeanpot is the perfect place to explore and 
+              learn something new!
           </p>
         </div>
 
@@ -204,6 +213,55 @@
         </div>
 
         <br>
+
+        <!-- Team Formation -->
+
+        <div class="divided title">Team Formation</div>
+        
+        <p class="section description"> 
+          *Note: These questions do not get factored into how your application is read! 
+          If you are part of a team, we will accept/reject your team together.
+        </p>
+
+        <br>
+
+        <div class="field">
+          <label>
+            Do you plan on attending HackBeanpot with a premade team? If yes, 
+            <b>please create/join a team with your teammates in the Team tab. </b>
+            <span class="required">*</span> 
+          </label>
+          <select
+            name="hasTeam"
+            ng-model="user.profile.hasTeam">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <p class="section description"> 
+          If you don’t have a team or would like to add more members to your team, we will have 
+          a project ideation session and team formation activity we’d love for you to attend. In 
+          the question below, if you express interest in finding a team at the event we will reach 
+          out closer to the event with more details. 
+        </p>
+
+        <div class="field">
+          <label>
+            Would you be interested in creating a team or finding more members for your current team at our team formation event?
+            <span class="required">*</span> 
+          </label>
+          <select
+            name="teamFormationPlan"
+            ng-model="user.profile.teamFormationPlan">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <br>
+
+        <!-- Old Questions -->
 
         <div class="checkbox-label"> Tech Interests  <span class="required">*</span> </div>
         <div class="field"
@@ -273,20 +331,6 @@
             <input type="text"
                    placeholder="Dietary Restrictions"
                    ng-model="user.profile.dietaryRestrictions">
-        </div>
-  
-        <br>
-
-        <div class="field">
-          <label> Are you planning on coming with a team?  <span class="required">*</span> </label>
-          <select
-            name="teamPlan"
-            ng-model="user.profile.teamPlan">
-            <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
-            <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
-            <option value="I want to join a new team at the event">I want to join a new team at the event.</option>
-            <option value="I want to work solo">I want to work solo.</option>
-          </select>
         </div>
 
         <br>

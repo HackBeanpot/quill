@@ -69,6 +69,20 @@ var profile = {
     max: 300
   },
 
+  hasTeam: {
+    type: String,
+    enum: {
+      values: ["yes", "no"]
+    }
+  },
+
+  teamFormationPlan: {
+    type: String,
+    enum: {
+      values: ["yes", "no"]
+    }
+  },
+
   activities: {
     type: String,
     min: 0,
@@ -89,11 +103,6 @@ var profile = {
     type: String,
     min: 0,
     max: 300
-  },
-
-  teamPlan: {
-    type: String,
-    enum: ['I have a team that I plan to come and work with', 'I have a team in mind but would be open to finding a new team at the event', 'I want to join a new team at the event', 'I want to work solo']
   },
 
   heardAboutUs: {
@@ -421,11 +430,10 @@ schema.statics.validateProfile = function(profile, cb) {
       ["0", "1", "3", "6"].indexOf(profile.hackathonsAttended) > -1 &&
       profile.learningGoals.length > 0 &&
       profile.passions.length > 0 &&
+      ["yes", "no"].indexOf(profile.hasTeam) > -1 &&
+      ["yes", "no"].indexOf(profile.teamFormationPlan) > -1 &&
       // new above, old below
       profile.activities.length > 0 &&
-      ['I have a team that I plan to come and work with',
-       'I have a team in mind but would be open to finding a new team at the event', 
-       'I want to join a new team at the event', 'I want to work solo'].indexOf(profile.teamPlan) > -1 &&
       profile.heardAboutUs.length > 0 &&
       profile.techInterests.length > 0 &&
       profile.hackerExperience.length > 0

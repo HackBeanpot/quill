@@ -211,6 +211,38 @@
                 ng-model="selectedUser.profile.passions">
       </div>
 
+      <!-- Team Formation -->
+
+      <div class="field">
+        <label>
+          Do you plan on attending HackBeanpot with a premade team? If yes, 
+          <b>please create/join a team with your teammates in the Team tab. </b>
+          <span class="required">*</span> 
+        </label>
+        <select
+          name="hasTeam"
+          ng-model="user.profile.hasTeam">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>
+          Would you be interested in creating a team or finding more members for your current team at our team formation event?
+          <span class="required">*</span> 
+        </label>
+        <select
+          name="teamFormationPlan"
+          ng-model="user.profile.teamFormationPlan">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+
+      <!-- Older Questions -->
+
       <div class="field">
         <label> Tech Interests </label>
         <input
@@ -246,18 +278,6 @@
         <input type="text"
                 ng-model="selectedUser.profile.activities">
       </div>
-
-      <div class="field">
-        <label> Are you planning on coming with a team? </label>
-        <select
-          name="teamPlan"
-          ng-model="selectedUser.profile.teamPlan">
-          <option value="I have a team that I plan to come and work with">I have a team that I plan to come and work with.</option>
-          <option value="I have a team in mind but would be open to finding a new team at the event">I have a team in mind but would be open to finding a new team at the event.</option>
-          <option value="I want to join a new team at the event">I want to join a new team at the event.</option>
-          <option value="I want to work solo">I want to work solo.</option>
-        </select>
-      </div> 
 
       <div class="field">
         <div

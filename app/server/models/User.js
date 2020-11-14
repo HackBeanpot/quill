@@ -428,10 +428,8 @@ schema.statics.validateProfile = function(profile, cb) {
       profile.passions.length > 0 &&
       ["yes", "no"].indexOf(profile.hasTeam) > -1 &&
       ["yes", "no"].indexOf(profile.teamFormationPlan) > -1 &&
-      // new above, old below
       profile.heardAboutUs.length > 0 &&
-      profile.activityInterests.length > 0 &&
-      profile.hackerExperience.length > 0
+      profile.activityInterests.length > 0
     )
   );
 };

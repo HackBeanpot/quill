@@ -158,6 +158,24 @@
       </div>
 
       <div class="field">
+        <label>Shirt size? </label>
+        <select
+          name="shirt"
+          ng-model="selectedUser.profile.shirtSize"
+          required>
+          <option value=""></option>
+          <option value="XS">Unisex X-Small</option>
+          <option value="S">Unisex Small</option>
+          <option value="M">Unisex Medium</option>
+          <option value="L">Unisex Large</option>
+          <option value="XL">Unisex X-Large</option>
+          <option value="XXL">Unisex XX-Large</option>
+        </select>
+      </div>
+
+      <!-- Interests and Experience-->
+
+      <div class="field">
         <label> What is your experience with Hackathons? </label>
         <input
           type="text" ng-model="selectedUser.profile.hackerExperience" />
@@ -211,22 +229,6 @@
           </label>
           <textarea placeholder="Ideas or topics" ng-model="selectedUser.profile.topicsTechnologies">
           </textarea>
-      </div>
-
-      <div class="field">
-        <label> S.W.A.G. - Shirts We All Got. Shirt size? </label>
-        <select
-          name="shirt"
-          ng-model="selectedUser.profile.shirtSize"
-          required>
-          <option value=""></option>
-          <option value="XS">Unisex X-Small</option>
-          <option value="S">Unisex Small</option>
-          <option value="M">Unisex Medium</option>
-          <option value="L">Unisex Large</option>
-          <option value="XL">Unisex X-Large</option>
-          <option value="XXL">Unisex XX-Large</option>
-        </select>
       </div>
 
       <div class="field">

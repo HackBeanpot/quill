@@ -120,7 +120,32 @@
 
         <p class="section description"> Please note: Our events are best viewed in EST - PST, but we’ll do our best to upload recordings as soon as possible for those joining from other time zones, as well as spread out our activities throughout the day. </p>
 
+        <div class="field">
+          <label>Shirt size? <span class="required">*</span> </label>
+          <select
+            name="shirt"
+            ng-model="user.profile.shirtSize"
+            required>
+            <option value=""></option>
+            <option value="XS">Unisex X-Small</option>
+            <option value="S">Unisex Small</option>
+            <option value="M">Unisex Medium</option>
+            <option value="L">Unisex Large</option>
+            <option value="XL">Unisex X-Large</option>
+            <option value="XXL">Unisex XX-Large</option>
+          </select>
+        </div>
+
+        <div class="field">
+            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
+            <input type="text"
+                   placeholder="Your Resume"
+                   ng-model="user.profile.resume">    
+        </div>
+  
         <br>
+
+        <!-- Interests and Experience -->
 
         <div class="divided title">Interests and Experience</div>
 
@@ -171,15 +196,6 @@
           </input>
         </div>
         
-        <br>
-
-        <div class="field">
-            <label>Send us a Google Drive link to your resume (in PDF format)  - This is not for us to look at! We will simply pass your resume on to our sponsors.</label>
-            <input type="text"
-                   placeholder="Your Resume"
-                   ng-model="user.profile.resume">    
-        </div>
-  
         <br>
 
         <div class="divided title">HackBeanpot-Related Things</div>
@@ -256,24 +272,6 @@
           </select>
         </div>
 
-        <br>
-
-        <div class="field">
-          <label> S.W.A.G. - Shirts We All Got. Shirt size? <span class="required">*</span> </label>
-          <select
-            name="shirt"
-            ng-model="user.profile.shirtSize"
-            required>
-            <option value=""></option>
-            <option value="XS">Unisex X-Small</option>
-            <option value="S">Unisex Small</option>
-            <option value="M">Unisex Medium</option>
-            <option value="L">Unisex Large</option>
-            <option value="XL">Unisex X-Large</option>
-            <option value="XXL">Unisex XX-Large</option>
-          </select>
-        </div>
-        
         <br>
 
         <div class="field">

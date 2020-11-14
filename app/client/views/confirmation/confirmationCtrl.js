@@ -25,37 +25,39 @@ angular.module('reg')
       // -------------------------------
       // All this just for dietary restriction checkboxes fml
 
-      var dietaryRestrictions = {
-        'Vegetarian': false,
-        'Vegan': false,
-        'Halal': false,
-        'Kosher': false,
-        'Nut Allergy': false,
-        'Other': false
-      };
+      // Temporarily hiding since 2021 is virtual
 
-      if (user.confirmation.dietaryRestrictions){
-        user.confirmation.dietaryRestrictions.forEach(function(restriction){
-          if (restriction in dietaryRestrictions){
-            dietaryRestrictions[restriction] = true;
-          }
-        });
-      }
+      // var dietaryRestrictions = {
+      //   'Vegetarian': false,
+      //   'Vegan': false,
+      //   'Halal': false,
+      //   'Kosher': false,
+      //   'Nut Allergy': false,
+      //   'Other': false
+      // };
 
-      $scope.dietaryRestrictions = dietaryRestrictions;
+      // if (user.confirmation.dietaryRestrictions){
+      //   user.confirmation.dietaryRestrictions.forEach(function(restriction){
+      //     if (restriction in dietaryRestrictions){
+      //       dietaryRestrictions[restriction] = true;
+      //     }
+      //   });
+      // }
+
+      // $scope.dietaryRestrictions = dietaryRestrictions;
 
       // -------------------------------
 
       function _updateUser(e){
         var confirmation = $scope.user.confirmation;
         // Get the dietary restrictions as an array
-        var drs = [];
-        Object.keys($scope.dietaryRestrictions).forEach(function(key){
-          if ($scope.dietaryRestrictions[key]){
-            drs.push(key);
-          }
-        });
-        confirmation.dietaryRestrictions = drs;
+        // var drs = [];
+        // Object.keys($scope.dietaryRestrictions).forEach(function(key){
+        //   if ($scope.dietaryRestrictions[key]){
+        //     drs.push(key);
+        //   }
+        // });
+        // confirmation.dietaryRestrictions = drs;
 
         UserService
           .updateConfirmation(user._id, confirmation)

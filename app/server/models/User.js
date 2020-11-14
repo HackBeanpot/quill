@@ -89,11 +89,12 @@ var profile = {
     max: 300
   },
 
-  dietaryRestrictions: {
-    type: String,
-    min: 0,
-    max: 300
-  },
+  // Temporarily hiding since 2021 is virtual
+  // dietaryRestrictions: {
+  //   type: String,
+  //   min: 0,
+  //   max: 300
+  // },
 
   techInterests: {
     type: [String]
@@ -175,8 +176,8 @@ var profile = {
 // Only after confirmed
 var confirmation = {
   phoneNumber: String,
-  dietaryRestrictions: [String],
-  otherDietaryRestrictions: String,
+  // dietaryRestrictions: [String],
+  // otherDietaryRestrictions: String,
 
   github: String,
   linkedin: String,

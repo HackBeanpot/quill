@@ -20,7 +20,7 @@ angular.module('reg')
       // Populate the size of the modal for when it appears, with an arbitrary user.
       $scope.selectedUser = {};
       $scope.selectedUser.sections = generateSections({status: '', confirmation: {
-        dietaryRestrictions: []
+        //dietaryRestrictions: []
       }, profile: {
         techInterests: [],
         heardAboutUs: [],
@@ -323,9 +323,9 @@ angular.module('reg')
               },{
                 name: 'Activities',
                 value: user.profile.activities
-              },{
-                name: 'Dietary Restrictions',
-                value: user.profile.dietaryRestrictions
+              // },{
+              //   name: 'Dietary Restrictions',
+              //   value: user.profile.dietaryRestrictions
               },{
                 name: 'Shirt Size',
                 value: user.profile.shirtSize
@@ -355,12 +355,12 @@ angular.module('reg')
               {
                 name: 'Phone Number',
                 value: user.confirmation.phoneNumber
-              },{
-                name: 'Dietary Restrictions',
-                value: user.confirmation.dietaryRestrictions.join(', ')
-              },{
-                name: 'Other Dietary Restrictions',
-                value: user.confirmation.otherDietaryRestrictions
+              // },{
+              //   name: 'Dietary Restrictions',
+              //   value: user.confirmation.dietaryRestrictions.join(', ')
+              // },{
+              //   name: 'Other Dietary Restrictions',
+              //   value: user.confirmation.otherDietaryRestrictions
               },{
                 name: 'Github',
                 value: user.confirmation.github

@@ -56,8 +56,9 @@ angular.module('reg')
         'Facebook': false,
         'Twitter': false,
         'Instagram': false,
-        'Outreach Event': false,
+        'HackBeanpot Outreach Event': false,
         'Our Website': false,
+        'Email/Newsletter': false,
         'Blog Post': false,
         'Other': false
       };

@@ -55,7 +55,7 @@ angular.module('reg')
         'HackBeanpot Outreach Event': false,
         'Our Website': false,
         'Email/Newsletter': false,
-        'Blog Post': false,
+        'School/Club': false,
         'Other': false
       };
 
@@ -75,7 +75,7 @@ angular.module('reg')
 
       var ethnicity = {
         'Indigenous American or Alaska Native': false,
-        'Asian (Far East, Southeast, South)': false,
+        'Asian (East, Central, Southeast, South)': false,
         'Black or African American': false,
         'Hispanic or Latino': false,
         'Native Hawaiian or Other Pacific Islander': false,

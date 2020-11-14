@@ -314,10 +314,10 @@ angular.module('reg')
                 name: 'Passions',
                 value: user.profile.passions
               },{
-                name: 'Passions',
+                name: 'Has Team',
                 value: user.profile.hasTeam
               },{
-                name: 'Passions',
+                name: 'Interested in Team Formation',
                 value: user.profile.teamFormationPlan
               },{
                 name: 'Special Accomodations',

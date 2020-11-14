@@ -321,6 +321,9 @@ angular.module('reg')
                 name: 'Passions',
                 value: user.profile.teamFormationPlan
               },{
+                name: 'Special Accomodations',
+                value: user.profile.specialAccomodations
+              },{
                 name: 'Activities',
                 value: user.profile.activities
               // },{

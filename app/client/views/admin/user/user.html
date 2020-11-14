@@ -152,6 +152,16 @@
       </div>
 
       <div class="field">
+        <label> Major </label>
+        <input type="text" ng-model="selectedUser.profile.major" />
+      </div>
+
+      <div class="field">
+        <label>Minor(s), if any</label>
+        <input type="text" ng-model="selectedUser.profile.minor">
+      </div>
+
+      <div class="field">
         <label>Likely Timezone</label>
         <input type="text"
                 ng-model="selectedUser.profile.timezone">
@@ -171,6 +181,14 @@
           <option value="XL">Unisex X-Large</option>
           <option value="XXL">Unisex XX-Large</option>
         </select>
+      </div>
+
+      <div class="field">
+        <label>
+          Are there any special accommodations you would need from us?
+          *Note: This question does not get factored into how your application is read! 
+        </label>
+        <input type="text" ng-model="selectedUser.profile.specialAccomodations">
       </div>
 
       <!-- Interests and Experience-->
@@ -317,21 +335,6 @@
           <input
             type="text" ng-model="selectedUser.confirmation.otherDietaryRestrictions" />
         </div> -->
-
-      <div class="field">
-        <label> Shirt Size </label>
-        <input type="text" ng-model="selectedUser.profile.shirtSize" />
-      </div>
-
-      <div class="field">
-        <label> Major </label>
-        <input type="text" ng-model="selectedUser.profile.major" />
-      </div>
-
-      <div class="field">
-        <label>Minor(s), if any</label>
-        <input type="text" ng-model="selectedUser.profile.minor">
-      </div>
 
       <div class="field">
         <label> Github </label>

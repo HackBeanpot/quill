@@ -82,6 +82,11 @@ var profile = {
       values: ["yes", "no"]
     }
   },
+  specialAccomodations: {
+    type: String,
+    min: 1,
+    max: 100
+  },
 
   activities: {
     type: String,
@@ -150,19 +155,19 @@ var profile = {
   major: {
     type: String,
     min: 0,
-    max: 1500
+    max: 100
   },
 
   minor: {
     type: String,
     min: 0,
-    max: 1500
+    max: 100
   },
 
   resume: {
     type: String,
     min: 0,
-    max: 1500
+    max: 500
   },
 
   shirtSize: {

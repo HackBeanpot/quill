@@ -37,11 +37,6 @@ function calculateStats(){
     confirmedMit: 0,
     declined: 0,
 
-    confirmedFemale: 0,
-    confirmedMale: 0,
-    confirmedOther: 0,
-    confirmedNone: 0,
-
     shirtSizes: {
       'XS': 0,
       'S': 0,
@@ -87,11 +82,6 @@ function calculateStats(){
 
         // Count confirmed that are mit
         newStats.confirmedMit += user.status.confirmed && email === "mit.edu" ? 1 : 0;
-
-        newStats.confirmedFemale += user.status.confirmed && user.profile.gender == "F" ? 1 : 0;
-        newStats.confirmedMale += user.status.confirmed && user.profile.gender == "M" ? 1 : 0;
-        newStats.confirmedOther += user.status.confirmed && user.profile.gender == "O" ? 1 : 0;
-        newStats.confirmedNone += user.status.confirmed && user.profile.gender == "N" ? 1 : 0;
 
         // Count declined
         newStats.declined += user.status.declined ? 1 : 0;
@@ -139,15 +129,6 @@ function calculateStats(){
         newStats.hostNeededFri += user.confirmation.hostNeededFri ? 1 : 0;
         newStats.hostNeededSat += user.confirmation.hostNeededSat ? 1 : 0;
         newStats.hostNeededUnique += user.confirmation.hostNeededFri || user.confirmation.hostNeededSat ? 1 : 0;
-
-        newStats.hostNeededFemale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "F" ? 1 : 0;
-        newStats.hostNeededMale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "M" ? 1 : 0;
-        newStats.hostNeededOther
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "O" ? 1 : 0;
-        newStats.hostNeededNone
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
 
         // Dietary restrictions
         if (user.confirmation.dietaryRestrictions){

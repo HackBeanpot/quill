@@ -94,13 +94,7 @@ var profile = {
     type: [String]
   },
 
-  hypesong: {
-    type: String,
-    min: 0,
-    max: 300
-  },
-
-  jellybean: {
+  timezone: {
     type: String,
     min: 0,
     max: 300
@@ -410,9 +404,9 @@ schema.statics.validateProfile = function(profile, cb) {
       profile.name.length > 0 &&
       profile.school.length > 0 &&
       profile.major.length > 0 &&
-      ["H", "1", "2", "3", "4", "5", "G"].indexOf(profile.year) > -1 &&
-      profile.hypesong.length > 0 &&
-      profile.jellybean.length > 0 &&
+      ["H", "U", "G"].indexOf(profile.educationLevel) > -1 &&
+      ["1", "2", "3", "4", "5"].indexOf(profile.year) > -1 &&
+      profile.timezone.length > 0 &&
       profile.background.length > 0 &&
       profile.activities.length > 0 &&
       profile.topicsTechnologies.length > 0 &&
@@ -424,7 +418,6 @@ schema.statics.validateProfile = function(profile, cb) {
       profile.heardAboutUs.length > 0 &&
       profile.techInterests.length > 0 &&
       profile.hackerExperience.length > 0
-
     )
   );
 };

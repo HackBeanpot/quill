@@ -105,31 +105,34 @@
       </div>
 
       <div class="field">
-        <label>Graduation Year</label>
+        <label>Education Level (Currently Pursuing)</label>
+        <select
+          name="educationLevel"
+          ng-model="selectedUser.profile.educationLevel">
+          <option value="H">High School</option>
+          <option value="U">Undergraduate</option>
+          <option value="G">Graduate</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Year</label>
         <select
           name="year"
           ng-model="selectedUser.profile.year">
-          <option value="H">High School</option>
           <option value="1">1st Year</option>
           <option value="2">2nd Year</option>
           <option value="3">3rd Year</option>
           <option value="4">4th Year</option>
-          <option value="5">5th Year (and up)</option>
-          <option value="G">Graduate Student</option>
+          <option value="5">5th Year+</option>
         </select>
       </div>
 
       <div class="field">
         <label>Gender</label>
-        <select
-          name="gender"
-          ng-model="selectedUser.profile.gender">
-          <option value="">Gender</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
-          <option value="O">Other</option>
-          <option value="N">I prefer not to answer.</option>
-        </select>
+        <input type="text"
+                name="gender"
+                ng-model="selectedUser.profile.gender">
       </div>
 
       <div class="field">
@@ -137,11 +140,11 @@
         <select
           name="ethnicity"
           ng-model="selectedUser.profile.ethnicity">
-          <option value="A">American Indian or Alaska Native</option>
-          <option value="B">Asian</option>
+          <option value="A">Indigenous American or Alaska Native</option>
+          <option value="B">Asian (Far East, Southeast, South)</option>
           <option value="C">Black or African American</option>
           <option value="D">Hispanic or Latino</option>
-          <option value="E">Native Hawaiian or Pacific Islander</option>
+          <option value="E">Native Hawaiian or Other Pacific Islander</option>
           <option value="F">White</option>
           <option value="G">Two or more races</option>
           <option value="H">Other</option>
@@ -150,15 +153,9 @@
 
 
       <div class="field">
-        <label>What's your favorite hype song?</label>
+        <label>What timezone will you most likely be attending the event from?</label>
         <input type="text"
-                ng-model="selectedUser.profile.hypesong">
-      </div>
-
-      <div class="field">
-        <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;))</label>
-        <input type="text"
-                ng-model="selectedUser.profile.jellybean">
+                ng-model="selectedUser.profile.timezone">
       </div>
 
       <div class="field">

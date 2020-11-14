@@ -11,7 +11,7 @@
 
         <p class="application-description"> Questions marked with <span class="required">*</span> are required. After you submit your application, you can come back and edit it anytime. </p>
 
-        <div class="divided title">Get to know you!</div>
+        <div class="divided title">Let's get to know you!</div>
 
         <fieldset ng-disabled="regIsClosed">
 
@@ -50,30 +50,35 @@
         </div>
 
         <div class="field">
+          <label>What education level are you currently pursuing? <span class="required">*</span></label>
+          <select
+            name="educationLevel"
+            ng-model="selectedUser.profile.educationLevel">
+            <option value="H">High School</option>
+            <option value="U">Undergraduate</option>
+            <option value="G">Graduate</option>
+          </select>
+        </div>
+
+        <div class="field">
           <label>Year <span class="required">*</span></label>
           <select
             name="year"
             ng-model="user.profile.year">
-            <option value="H">High School</option>
             <option value="1">1st Year</option>
             <option value="2">2nd Year</option>
             <option value="3">3rd Year</option>
             <option value="4">4th Year</option>
-            <option value="5">5th Year (and up)</option>
-            <option value="G">Graduate Student</option>
+            <option value="5">5th Year+</option>
           </select>
         </div>
 
         <div class="field">
           <label>Gender</label>
-          <select
-            name="gender"
-            ng-model="user.profile.gender">
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="O">Non-Binary</option>
-            <option value="N">I prefer not to answer.</option>
-          </select>
+          <input type="text"
+                 name="gender"
+                 placeholder="Gender"
+                 ng-model="user.profile.gender">
         </div>
 
         <div class="field">
@@ -81,11 +86,11 @@
           <select
             name="ethnicity"
             ng-model="user.profile.ethnicity">
-            <option value="A">American Indian or Alaska Native</option>
-            <option value="B">Asian</option>
+            <option value="A">Indigenous American or Alaska Native</option>
+            <option value="B">Asian (Far East, Southeast, South)</option>
             <option value="C">Black or African American</option>
             <option value="D">Hispanic or Latino</option>
-            <option value="E">Native Hawaiian or Pacific Islander</option>
+            <option value="E">Native Hawaiian or Other Pacific Islander</option>
             <option value="F">White</option>
             <option value="G">Two or more races</option>
             <option value="H">Other</option>
@@ -107,17 +112,10 @@
         </div>
 
         <div class="field">
-          <label>What's your favorite hype song? <span class="required">*</span></label>
+          <label>What timezone will you most likely be attending the event from? <span class="required">*</span></label>
           <input type="text"
-                 placeholder="Hype"
-                 ng-model="user.profile.hypesong">
-        </div>
-
-        <div class="field">
-          <label>What flavored jellybean would you be and why? (Doesn’t have to be a real flavor ;)) <span class="required">*</span></label>
-          <input type="text"
-                 placeholder="The correct answer is hack flavored... just kidding."
-                 ng-model="user.profile.jellybean">
+                 placeholder="Timezone"
+                 ng-model="user.profile.timezone">
         </div>
 
         <br>
@@ -287,7 +285,7 @@
 
         <div class="thank you">
           <p>
-              Thank you for your interest - we can’t wait to learn about you! Our team will let you know by the week of January 17, 2020 if you've been accepted or if you’ll be on our waitlist. Stay tuned!
+              Thank you for your interest - we can’t wait to learn about you! Our team will let you know by the week of January 17, 2021 if you've been accepted or if you’ll be on our waitlist. Stay tuned!
           </p>
           <p>
             If you have any questions in the meantime, feel free to reach out to us at 

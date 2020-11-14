@@ -295,11 +295,11 @@ angular.module('reg')
                 name: 'Minor',
                 value: user.profile.minor
               },{
-                name: 'Hype Song',
-                value: user.profile.hypesong
+                name: 'Timezone',
+                value: user.profile.timezone
               },{
-                name: 'Jellybean Flavor',
-                value: user.profile.jellybean
+                name: 'Education Level',
+                value: user.profile.educationLevel
               },{
                 name: 'Graduation Year',
                 value: user.profile.year

@@ -89,45 +89,6 @@
                ng-model="selectedUser.profile.name">
       </div>
 
-      <div class="field" ng-show="autoFilledSchool">
-        <label> School </label>
-        <input class="ui input"
-               disabled="disabled"
-               ng-show="autoFilledSchool"
-               ng-model="selectedUser.profile.school">
-      </div>
-
-      <div class="field" ng-show="!autoFilledSchool">
-        <label> School </label>
-        <input class="ui input"
-               name="school"
-               ng-model="selectedUser.profile.school">
-      </div>
-
-      <div class="field">
-        <label>Education Level (Currently Pursuing)</label>
-        <select
-          name="educationLevel"
-          ng-model="selectedUser.profile.educationLevel">
-          <option value="H">High School</option>
-          <option value="U">Undergraduate</option>
-          <option value="G">Graduate</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Year</label>
-        <select
-          name="year"
-          ng-model="selectedUser.profile.year">
-          <option value="1">1st Year</option>
-          <option value="2">2nd Year</option>
-          <option value="3">3rd Year</option>
-          <option value="4">4th Year</option>
-          <option value="5">5th Year+</option>
-        </select>
-      </div>
-
       <div class="field">
         <label>Gender</label>
         <input type="text"
@@ -151,9 +112,47 @@
         </select>
       </div>
 
+      <div class="field" ng-show="autoFilledSchool">
+        <label> School </label>
+        <input class="ui input"
+               disabled="disabled"
+               ng-show="autoFilledSchool"
+               ng-model="selectedUser.profile.school">
+      </div>
+
+      <div class="field" ng-show="!autoFilledSchool">
+        <label> School </label>
+        <input class="ui input"
+               name="school"
+               ng-model="selectedUser.profile.school">
+      </div>
 
       <div class="field">
-        <label>What timezone will you most likely be attending the event from?</label>
+        <label>Education Level (currently pursuing)</label>
+        <select
+          name="educationLevel"
+          ng-model="selectedUser.profile.educationLevel">
+          <option value="H">High School</option>
+          <option value="U">Undergraduate</option>
+          <option value="G">Graduate</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Year</label>
+        <select
+          name="year"
+          ng-model="selectedUser.profile.year">
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+          <option value="5">5th Year+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Likely Timezone</label>
         <input type="text"
                 ng-model="selectedUser.profile.timezone">
       </div>

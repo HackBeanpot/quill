@@ -31,48 +31,6 @@
                  ng-model="user.profile.name">
         </div>
 
-        <div class="field" ng-show="autoFilledSchool">
-          <label> School <span class="required">*</span> </label>
-          <input class="ui input"
-                 disabled="disabled"
-                 ng-show="autoFilledSchool"
-                 ng-model="user.profile.school">
-        </div>
-
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> School <span class="required">*</span> </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
-            </div>
-            <div class="results"></div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>What education level are you currently pursuing? <span class="required">*</span></label>
-          <select
-            name="educationLevel"
-            ng-model="selectedUser.profile.educationLevel">
-            <option value="H">High School</option>
-            <option value="U">Undergraduate</option>
-            <option value="G">Graduate</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Year <span class="required">*</span></label>
-          <select
-            name="year"
-            ng-model="user.profile.year">
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
-            <option value="5">5th Year+</option>
-          </select>
-        </div>
-
         <div class="field">
           <label>Gender</label>
           <input type="text"
@@ -80,9 +38,9 @@
                  placeholder="Gender"
                  ng-model="user.profile.gender">
         </div>
-
+        
         <div class="field">
-          <label>Ethnicity</label>
+          <label>What ethnicities do you identify as?</label>
           <select
             name="ethnicity"
             ng-model="user.profile.ethnicity">
@@ -97,15 +55,57 @@
           </select>
         </div>
 
+        <div class="field" ng-show="autoFilledSchool">
+          <label>What school do you attend? <span class="required">*</span> </label>
+          <input class="ui input"
+                 disabled="disabled"
+                 ng-show="autoFilledSchool"
+                 ng-model="user.profile.school">
+        </div>
+
+        <div class="field" ng-show="!autoFilledSchool">
+          <label>What school do you attend? <span class="required">*</span> </label>
+          <div id="school" class="ui search">
+            <div class="ui input">
+              <input class="prompt" type="text" placeholder="School" name="school" ng-model="user.profile.school">                
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+
         <div class="field">
-          <label>Major <span class="required">*</span></label>
+          <label>What level of education are you currently pursuing? <span class="required">*</span></label>
+          <select
+            name="educationLevel"
+            ng-model="selectedUser.profile.educationLevel">
+            <option value="H">High School</option>
+            <option value="U">Undergraduate</option>
+            <option value="G">Graduate</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>What year in your current education are you? <span class="required">*</span></label>
+          <select
+            name="year"
+            ng-model="user.profile.year">
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+            <option value="5">5th Year+</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>What are you majoring in? <span class="required">*</span></label>
           <input type="text"
                  placeholder="Major"
                  ng-model="user.profile.major">
         </div>
         
         <div class="field">
-          <label>Minor(s), if any</label>
+          <label>What are you minoring in?</label>
           <input type="text"
                  placeholder="Minor"
                  ng-model="user.profile.minor">
@@ -117,6 +117,8 @@
                  placeholder="Timezone"
                  ng-model="user.profile.timezone">
         </div>
+
+        <p class="section description"> Please note: Our events are best viewed in EST - PST, but we’ll do our best to upload recordings as soon as possible for those joining from other time zones, as well as spread out our activities throughout the day. </p>
 
         <br>
 

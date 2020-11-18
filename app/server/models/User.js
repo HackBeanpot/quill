@@ -48,25 +48,25 @@ var profile = {
   description: {
     type: String,
     min: 0,
-    max: 300
+    max: 500
   },
 
   virtualOpinions: {
     type: String,
     min: 0,
-    max: 300
+    max: 1500
   },
 
   learningGoals: {
     type: String,
     min: 0,
-    max: 300
+    max: 1500
   },
 
   passions: {
     type: String,
     min: 0,
-    max: 300
+    max: 1500
   },
 
   hasTeam: {
@@ -85,7 +85,7 @@ var profile = {
   specialAccomodations: {
     type: String,
     min: 1,
-    max: 100
+    max: 1000
   },
 
   // Temporarily hiding since 2021 is virtual
@@ -102,7 +102,7 @@ var profile = {
   otheractivityInterests: {
     type: String,
     min: 0,
-    max: 300
+    max: 500
   },
 
   heardAboutUs: {
@@ -112,19 +112,19 @@ var profile = {
   otherHeardAboutUs: {
     type: String,
     min: 0,
-    max: 300
+    max: 500
   },
 
   timezone: {
     type: String,
     min: 0,
-    max: 300
+    max: 500
   },
 
   misc: {
     type: String,
     min: 0,
-    max: 300
+    max: 500
   },
 
   // Optional info for demographics

@@ -54,19 +54,19 @@ var profile = {
   virtualOpinions: {
     type: String,
     min: 0,
-    max: 1500
+    max: 3000
   },
 
   learningGoals: {
     type: String,
     min: 0,
-    max: 1500
+    max: 3000
   },
 
   passions: {
     type: String,
     min: 0,
-    max: 1500
+    max: 3000
   },
 
   hasTeam: {
@@ -102,7 +102,7 @@ var profile = {
   otheractivityInterests: {
     type: String,
     min: 0,
-    max: 500
+    max: 1000
   },
 
   heardAboutUs: {
@@ -112,19 +112,19 @@ var profile = {
   otherHeardAboutUs: {
     type: String,
     min: 0,
-    max: 500
+    max: 1000
   },
 
   timezone: {
     type: String,
     min: 0,
-    max: 500
+    max: 1000
   },
 
   misc: {
     type: String,
     min: 0,
-    max: 500
+    max: 1000
   },
 
   // Optional info for demographics
